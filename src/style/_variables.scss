@@ -1,22 +1,30 @@
-$main-color: #1677ff;
-$blue-base: #1677ff;
-$blue-1: #e6f4ff;
-$blue-2: #bae0ff;
-$blue-3: #91caff;
-$blue-4: #69b1ff;
-$blue-5: #4096ff;
-$blue-6: $blue-base;
-$blue-7: #0958d9;
-$blue-8: #003eb3;
-$blue-9: #002c8c;
-$blue-10: #001d66;
-$color-1: #e6f4ff;
-$color-2: #bae0ff;
-$color-3: #91caff;
-$color-4: #69b1ff;
-$color-5: #4096ff;
-$color-6: $main-color;
-$color-7: #0958d9;
-$color-8: #003eb3;
-$color-9: #002c8c;
-$color-10: #001d66;
+:root {
+  --koo-main-color: #1677ff;
+  --koo-blue-base: #1677ff;
+  --koo-blue-1: #e6f4ff;
+  --koo-blue-2: #bae0ff;
+  --koo-blue-3: #91caff;
+  --koo-blue-4: #69b1ff;
+  --koo-blue-5: #4096ff;
+  --koo-blue-6: $blue-base;
+  --koo-blue-7: #0958d9;
+  --koo-blue-8: #003eb3;
+  --koo-blue-9: #002c8c;
+  --koo-blue-10: #001d66;
+  --koo-color-1: #e6f4ff;
+  --koo-color-2: #bae0ff;
+  --koo-color-3: #91caff;
+  --koo-color-4: #69b1ff;
+  --koo-color-5: #4096ff;
+  --koo-color-6: $main-color;
+  --koo-color-7: #0958d9;
+  --koo-color-8: #003eb3;
+  --koo-color-9: #002c8c;
+  --koo-color-10: #001d66;
+
+  // 字体大小
+  --koo-text-xs: 0.75rem;
+  --koo-text-sm: 0.875rem;
+  --koo-text-base: 1rem;
+  --koo-text-lg: 1.125rem;
+}
