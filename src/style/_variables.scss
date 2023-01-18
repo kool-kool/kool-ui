@@ -56,9 +56,34 @@
   --koo-hover-color: var(--koo-color-5);
   --koo-click-color: var(--koo-color-7);
 
+  // font-family
+  --koo-font-family: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto,
+    'Helvetica Neue', arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
   // 字体大小
-  --koo-text-xs: 0.75rem;
-  --koo-text-sm: 0.875rem;
-  --koo-text-base: 1rem;
-  --koo-text-lg: 1.125rem;
+  // 组件文字
+  // base: 14px
+  --koo-font-sm: 0.75rem;
+  --koo-font-base: 0.875rem;
+  --koo-font-lg: 1rem;
+  --koo-font-xl: 1.5rem;
+
+  // 行距
+  --koo-font-line-height-sm: 1.25rem;
+  --koo-font-line-height-base: 1.375rem;
+  --koo-font-line-height-lg: 1.5rem;
+  --koo-font-line-height-xl: 2rem;
+
+  // 排板
+  // base: 16px
+  --koo-text-xs: 0.75rem; // 12px
+  --koo-text-sm: 0.875rem; // 14px
+  --koo-text-base: 1rem; // 16px
+  --koo-text-lg: 1.125rem; // 18px
+
+  // 字重
+  --koo-font-weight-regular: 400;
+  --koo-font-weight-medium: 500;
+  --koo-font-weight-semibold: 600;
 }
