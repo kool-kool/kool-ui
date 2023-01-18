@@ -9,6 +9,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:react/jsx-runtime',
     'prettier'
   ],
   overrides: [],
@@ -24,6 +25,10 @@ module.exports = {
   settings: {
     'import/resolver': {
       typescript: {}
+    },
+    // 指定版本，解决eslint warning
+    react: {
+      version: '18.2.0'
     }
   }
 }
