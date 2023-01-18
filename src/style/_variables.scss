@@ -61,6 +61,12 @@
     'Helvetica Neue', arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
+  // btn定义颜色
+  --koo-btn-disable: black;
+  --koo-btn-link-disable: #e4e4e4;
+  --koo-btn-danger-unselected: #e80000;
+  --koo-btn-danger-selected: #f00;
+
   // 字体大小
   // 组件文字
   // base: 14px
