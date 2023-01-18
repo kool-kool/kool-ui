@@ -1,0 +1,222 @@
+@import '../../style/index';
+
+.koo-btn {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  background-color: transparent;
+  background-image: none;
+  border-radius: 0.25em;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    background-color: gray;
+    color: var(--koo-btn-disable);
+    box-shadow: none;
+    border: solid 1px var(--koo-btn-disable);
+    opacity: 10.7%;
+
+    > * {
+      pointer-events: none;
+    }
+
+    &:hover {
+      border: solid 1px var(--koo-btn-disable);
+      background-color: gray;
+      color: var(--koo-btn-disable);
+    }
+  }
+
+  &.koo-danger {
+    color: var(--koo-btn-danger-unselected);
+
+    &:hover {
+      background-color: var(--koo-btn-danger-selected);
+    }
+  }
+}
+
+.koo-btn-primary {
+  background-color: var(--koo-main-color);
+  color: white;
+  border: none;
+
+  &:hover {
+    background-color: var(--koo-blue-5);
+  }
+
+  &.koo-danger {
+    background-color: var(--koo-btn-danger-unselected);
+    color: white;
+  }
+}
+
+.koo-btn-link {
+  color: var(--koo-blue-5);
+  border: none;
+
+  &:hover {
+    color: var(--koo-blue-4);
+    cursor: pointer;
+  }
+
+  &.koo-danger {
+    &:hover {
+      background-color: transparent;
+      color: var(--koo-btn-danger-selected);
+    }
+  }
+}
+
+.koo-btn-dashed {
+  border: dashed 1px #d9d7d7;
+  color: black;
+
+  &:hover {
+    border: dashed 1px lightblue;
+    color: lightblue;
+  }
+
+  &.disabled,
+  &[disabled] {
+    border: dashed 1px var(--koo-btn-disable);
+
+    &:hover {
+      border: dashed 1px var(--koo-btn-disable);
+    }
+  }
+
+  &.koo-danger {
+    border: dashed 1px var(--koo-btn-danger-unselected);
+
+    &:hover {
+      background-color: transparent;
+      border: dashed 1px var(--koo-btn-danger-selected);
+      color: var(--koo-btn-danger-selected);
+    }
+  }
+}
+
+.koo-btn-default {
+  border: solid 1px #d9d7d7;
+  color: black;
+
+  &:hover {
+    border: solid 1px lightblue;
+    color: lightblue;
+  }
+
+  &.koo-danger {
+    border: solid 1px var(--koo-btn-danger-unselected);
+
+    &:hover {
+      background-color: transparent;
+      color: var(--koo-btn-danger-selected);
+      border: solid 1px var(--koo-btn-danger-selected);
+    }
+  }
+}
+
+.koo-btn-text {
+  border: none;
+  color: black;
+
+  &:hover {
+    background-color: #c7c5c5;
+  }
+
+  &.disabled,
+  &[disabled] {
+    background-color: transparent;
+    border: none;
+    color: var(--koo-btn-disable);
+
+    &:hover {
+      border: none;
+      background-color: transparent;
+    }
+  }
+
+  &.koo-danger {
+    &:hover {
+      background-color: #fff2f0;
+      color: var(--koo-btn-danger-selected);
+    }
+  }
+}
+
+.koo-disabled {
+  background-color: transparent;
+  cursor: not-allowed;
+  color: var(--koo-btn-link-disable);
+  box-shadow: none;
+  border: none;
+
+  &:hover {
+    background-color: transparent;
+    color: var(--koo-btn-link-disable);
+    cursor: not-allowed;
+  }
+}
+
+.koo-btn-ghost {
+  background-color: transparent;
+  color: white;
+  border: solid 1px white;
+
+  &:hover {
+    background-color: transparent;
+    border: solid 1px var(--koo-blue-4);
+    color: var(--koo-blue-4);
+  }
+
+  &.disabled,
+  &[disabled] {
+    background-color: transparent;
+    color: #d9d9d9;
+    border: solid 1px #d9d9d9;
+
+    &:hover {
+      background-color: transparent;
+      color: #d9d9d9;
+      border: solid 1px #d9d9d9;
+    }
+  }
+}
+
+.loading::before {
+  display: inline-block;
+  content: '';
+  height: 10px;
+  width: 10px;
+  border-left: solid 1px white;
+  border-radius: 70%;
+  animation: loading 0.75s ease infinite;
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(90deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(270deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
