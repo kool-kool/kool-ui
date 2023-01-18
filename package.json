@@ -5,7 +5,7 @@
   "keywords": [],
   "license": "ISC",
   "author": "",
-  "main": "index.js",
+  "main": "./src",
   "scripts": {
     "build:site": "rimraf doc-site && dumi build",
     "commit": "git-cz",
