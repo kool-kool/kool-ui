@@ -1,5 +1,8 @@
 .koo-breadcrumb-root {
   box-sizing: border-box;
   list-style: none;
-  color: var(--koo-main-color);
+  display: flex;
+  gap: 0.5rem;
+  font-size: var(--koo-font-base);
+  line-height: var(--koo-font-line-height-base);
 }
