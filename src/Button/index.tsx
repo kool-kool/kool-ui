@@ -1,17 +1,7 @@
 import classNames from 'classnames'
 import React from 'react'
+import { ButtonProps } from '../shared/types/utils'
 
-interface ButtonProps {
-  children?: string
-  classname?: string // 新加入的className
-  size?: 'large' | 'small' | 'middle'
-  type?: 'link' | 'primary' | 'dashed' | 'text' | 'default' | 'ghost'
-  target?: string
-  loading?: boolean
-  danger?: boolean
-  disabled?: boolean
-  ghost?: boolean
-}
 const Button = (Props: ButtonProps) => {
   const { children, size, type, loading, disabled, classname, danger } = Props
   const classes = classNames('koo-btn', classname, {
