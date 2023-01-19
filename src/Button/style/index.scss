@@ -61,13 +61,24 @@
 
   &:hover {
     color: var(--koo-blue-4);
-    cursor: pointer;
   }
 
   &.koo-danger {
     &:hover {
       background-color: transparent;
       color: var(--koo-btn-danger-selected);
+    }
+  }
+
+  &.disabled,
+  &[disabled] {
+    background-color: transparent;
+    border: none;
+    color: var(--koo-btn-disable);
+
+    &:hover {
+      border: none;
+      background-color: transparent;
     }
   }
 }
@@ -149,20 +160,6 @@
   }
 }
 
-.koo-disabled {
-  background-color: transparent;
-  cursor: not-allowed;
-  color: var(--koo-btn-link-disable);
-  box-shadow: none;
-  border: none;
-
-  &:hover {
-    background-color: transparent;
-    color: var(--koo-btn-link-disable);
-    cursor: not-allowed;
-  }
-}
-
 .koo-btn-ghost {
   background-color: transparent;
   color: white;
@@ -184,6 +181,17 @@
       background-color: transparent;
       color: #d9d9d9;
       border: solid 1px #d9d9d9;
+    }
+  }
+
+  &.koo-danger {
+    color: transparent;
+    border: transparent;
+
+    &:hover {
+      color: var(--koo-btn-danger-selected);
+      border: solid 1px var(--koo-btn-danger-selected);
+      background-color: transparent;
     }
   }
 }
@@ -222,5 +230,29 @@
 .koo-btn-large {
   font-size: var(--koo-font-xl);
   padding: 0.5rem 1rem;
-  border-radius: 3rem;
+  border-radius: 0.3rem;
+}
+
+.koo-btn-middle {
+  font-size: var(--koo-font-base);
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+.koo-btn-small {
+  font-size: var(--koo-font-sm);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.2rem;
+}
+
+.koo-btn-shape-default {
+  border-radius: 0.25em;
+}
+
+.koo-btn-shape-circle {
+  border-radius: 100%;
+}
+
+.koo-btn-shape-round {
+  border-radius: 1rem;
 }

@@ -3,19 +3,58 @@ import React from 'react'
 import { ButtonProps } from '../shared/types/utils'
 
 const Button = (Props: ButtonProps) => {
-  const { children, size, type, loading, disabled, classname, danger } = Props
+  const {
+    children,
+    size,
+    type,
+    loading,
+    disabled,
+    classname,
+    danger,
+    shape,
+    href,
+    target,
+    HtmlType,
+    onClick,
+    ...reset
+  } = Props
+  const handleClick = () => {
+    if (disabled || loading) {
+      return
+    }
+    if (onClick) {
+      onClick()
+    }
+  }
   const classes = classNames('koo-btn', classname, {
     [`koo-btn-${type}`]: type,
     [`koo-btn-${size}`]: size,
+    [`koo-btn-shape-${shape}`]: shape,
     'koo-danger': danger,
-    'koo-disabled': type === 'link' && disabled,
-    loading: loading
+    loading: loading,
+    type: HtmlType
   })
-  if (type === 'link') {
-    return <a className={classes}>{children}</a>
+  if (href && !loading && !disabled) {
+    return (
+      <a href={href} target={target}>
+        <button
+          className={classes}
+          onClick={handleClick}
+          disabled={disabled}
+          {...reset}
+        >
+          {children}
+        </button>
+      </a>
+    )
   } else {
     return (
-      <button className={classes} disabled={disabled}>
+      <button
+        className={classes}
+        onClick={handleClick}
+        disabled={disabled}
+        {...reset}
+      >
         {children}
       </button>
     )
