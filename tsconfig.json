@@ -10,9 +10,14 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "paths": {
+      "@@/*": [".dumi/tmp/*"],
+      "kool-ui": ["src"],
+      "kool-ui/*": ["src/*", "*"]
+    }
   },
   "lib": ["es2015", "dom"],
-  "include": ["src", "typings.d.ts"],
+  "include": ["src/**/*", "typings.d.ts", ".dumi/**/*", ".dumirc.ts"],
   "exclude": ["node_modules"]
 }
