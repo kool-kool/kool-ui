@@ -1,3 +1,7 @@
 import './style/index.scss'
-export { default as Breadcrumb } from './breadcrumb'
+export { Breadcrumbs, BreadcrumbsSeparator } from './breadcrumb'
+export type { BreadcrumbProps } from './breadcrumb'
 export { default as Button } from './Button'
+export { Link, underlineClassName } from './link'
+export type { LinkProps, Underline } from './link'
+export { childrenToArray } from './shared'

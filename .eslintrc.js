@@ -20,7 +20,8 @@ module.exports = {
   },
   plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
   rules: {
-    'prettier/prettier': 'error' // 对于不符合prettier报eslint错误
+    'prettier/prettier': 'error', // 对于不符合prettier报eslint错误
+    '@typescript-eslint/no-non-null-assertion': 'off'
   },
   settings: {
     'import/resolver': {

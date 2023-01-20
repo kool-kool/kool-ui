@@ -1,6 +1,3 @@
-export interface ClassName {
-  className?: string
-}
 export interface ButtonProps {
   children?: string
   classname?: string // 新加入的className
