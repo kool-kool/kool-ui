@@ -1,0 +1,30 @@
+.koo-link-root {
+  box-sizing: border-box;
+  color: var(--koo-gray-8);
+  font-family: var(--koo-font-family);
+  font-size: var(--koo-font-base);
+  line-height: var(--koo-font-line-height-base);
+
+  &:hover {
+    color: var(--koo-blue-base);
+  }
+}
+
+.koo-underline-none,
+.koo-underline-hover {
+  text-decoration-line: none;
+}
+
+.koo-underline-hover:hover {
+  text-decoration: underline var(--koo-blue-base);
+}
+
+.koo-link-disabled {
+  color: var(--koo-gray-6);
+  cursor: not-allowed;
+
+  &:hover {
+    text-decoration-line: none;
+    color: var(--koo-gray-6);
+  }
+}
