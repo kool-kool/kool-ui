@@ -44,7 +44,8 @@
     "@types/react": "^16.9.23"
   },
   "dependencies": {
-    "prop-types": "^15.8.1"
+    "prop-types": "^15.8.1",
+    "rc-util": "^5.27.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
