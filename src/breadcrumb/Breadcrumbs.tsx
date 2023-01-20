@@ -1,10 +1,8 @@
 import React from 'react'
-import { ClassName } from '../shared/types/utils'
 import toArray from '../shared/utils/childrenToArray'
 
 export interface BreadcrumbProps
-  extends ClassName,
-    React.OlHTMLAttributes<HTMLOListElement> {
+  extends React.OlHTMLAttributes<HTMLOListElement> {
   /**
    * @description item的分隔符
    * @default     /
