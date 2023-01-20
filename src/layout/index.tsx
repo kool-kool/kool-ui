@@ -1,5 +1,5 @@
 import InternalLayout, { Content, Footer, Header } from './Layout'
-import Side from './Side/Side'
+import Side from './Side'
 
 type InternalLayoutType = typeof InternalLayout
 
