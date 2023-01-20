@@ -29,7 +29,7 @@ test('disable onclick function no click', () => {
   expect(jestFn).not.toHaveBeenCalled()
 })
 
-test('when Button on loading onclick function no click', () => {
+test('when button on loading onclick function no click', () => {
   const jestFn = jest.fn()
   const wrapper = render(
     <Button type="primary" onClick={jestFn} loading>
