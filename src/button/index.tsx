@@ -1,6 +1,24 @@
 import classNames from 'classnames'
-import React from 'react'
-import { ButtonProps } from '../shared/types/utils'
+import React, { ButtonHTMLAttributes, ReactNode } from 'react'
+// import { ButtonProps } from '../shared/types/utils'
+
+interface ButtonProps
+  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type' | 'onClick'> {
+  children?: ReactNode
+  classname?: string // 新加入的className
+  size?: 'large' | 'small' | 'middle'
+  type?: 'link' | 'primary' | 'dashed' | 'text' | 'default' | 'ghost'
+  target?: string
+  loading?: boolean
+  danger?: boolean
+  disabled?: boolean
+  icon?: ReactNode
+  ghost?: boolean
+  HtmlType?: string
+  href?: string
+  shape?: 'default' | 'circle' | 'round'
+  onClick?: () => void
+}
 
 const Button = (Props: ButtonProps) => {
   const {
