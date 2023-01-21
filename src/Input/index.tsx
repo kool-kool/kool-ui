@@ -1,41 +1,31 @@
-import React, {FC,ReactElement, InputHTMLAttributes} from 'react';
-import classNames from "classnames";
+import classNames from 'classnames'
+import React, { FC, InputHTMLAttributes, ReactElement } from 'react'
 
-
-interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size' | 'prefix'>{
-
-  disabled?: boolean;
-  size?: 'lg' | 'sm';
-  prefix?: string | ReactElement;
-  suffix?: string | ReactElement;
+interface InputProps
+  extends Omit<InputHTMLAttributes<HTMLElement>, 'size' | 'prefix'> {
+  disabled?: boolean
+  size?: 'lg' | 'sm'
+  prefix?: string | ReactElement
+  suffix?: string | ReactElement
 }
 
-export const Input:FC<InputProps>  = (props) => {
-
-
-  const {disabled, size, prefix,suffix, ...restProps } = props;
-
+export const Input: FC<InputProps> = (props) => {
+  const { disabled, size, prefix, suffix, ...restProps } = props
 
   const classes = classNames('koo-input-wrapper', {
-    'koo-input-disabled' : disabled,
-    [`koo-input-${size}`] : size,
+    'koo-input-disabled': disabled,
+    [`koo-input-${size}`]: size,
     'koo-input-prefix': !!prefix,
-    'koo-input-suffix': !!suffix,
+    'koo-input-suffix': !!suffix
   })
   return (
     <div className={classes}>
+      {prefix && <div className="koo-input-group-prefix">{prefix}</div>}
 
-      {prefix && <div className='koo-input-group-prefix'>{prefix}</div>}
-
-      <input
-      disabled={disabled}
-      {...restProps}
-      />
-      {suffix && <div className='koo-input-group-suffix'>{suffix}</div>}
-
-
+      <input disabled={disabled} {...restProps} />
+      {suffix && <div className="koo-input-group-suffix">{suffix}</div>}
     </div>
   )
 }
 
-export default Input;
+export default Input
