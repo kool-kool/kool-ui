@@ -9,3 +9,6 @@ export interface ButtonProps {
   disabled?: boolean
   ghost?: boolean
 }
+
+export type Size = 'small' | 'normal' | 'large'
+export type Color = 'primary' | 'success' | 'info' | 'warning' | 'danger'

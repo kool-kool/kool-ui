@@ -18,6 +18,12 @@
     }
   },
   "lib": ["es2015", "dom"],
-  "include": ["src/**/*", "typings.d.ts", ".dumi/**/*", ".dumirc.ts"],
+  "include": [
+    "src/**/*",
+    "typings.d.ts",
+    ".dumi/**/*",
+    ".dumirc.ts",
+    "svgr.d.ts"
+  ],
   "exclude": ["node_modules"]
 }
