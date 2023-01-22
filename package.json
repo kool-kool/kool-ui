@@ -10,7 +10,7 @@
     "build:site": "rimraf doc-site && dumi build",
     "commit": "git-cz",
     "dev": "dumi dev",
-    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "format": "prettier --write --cache .",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
     "prepare": "husky install",
