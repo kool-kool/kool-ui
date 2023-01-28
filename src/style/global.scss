@@ -1,0 +1,23 @@
+@import './mixins';
+
+.koo {
+  &-primary-color {
+    @include create-color($color: var(--koo-primary-color));
+  }
+
+  &-success-color {
+    @include create-color($color: var(--koo-success-color));
+  }
+
+  &-warning-color {
+    @include create-color($color: var(--koo-warning-color));
+  }
+
+  &-failed-color {
+    @include create-color($color: var(--koo-failed-color));
+  }
+
+  &-info-color {
+    @include create-color($color: var(--koo-info-color));
+  }
+}

@@ -46,10 +46,11 @@
   --koo-color-10: #001d66;
 
   // functional color
-  --koo-regular-color: var(--koo-color-base);
+  --koo-primary-color: var(--koo-blue-base);
   --koo-success-color: var(--koo-green-base);
   --koo-warning-color: var(--koo-gold-base);
   --koo-failed-color: var(--koo-red-base);
+  --koo-info-color: var(--koo-gray-7);
 
   // Different states
   --koo-normal-color: var(--koo-color-6);
