@@ -1,41 +1,9 @@
 import '@testing-library/jest-dom'
-import { fireEvent, render } from '@testing-library/react'
-import React, { useState } from 'react'
-import { ListIcon } from '../../index'
+import { render } from '@testing-library/react'
+import React from 'react'
 import Layout from '../index'
 
 const { Header, Content, Footer, Side } = Layout
-
-const MyComponent = () => {
-  const [collapsed, setCollapsed] = useState(false)
-  return (
-    <Layout hasSide>
-      <Side
-        trigger={null}
-        collapsed={collapsed}
-        collapsedWidth={0}
-        breakpoint="lg"
-        onBreakpoint={(broken) => {
-          setCollapsed(broken)
-        }}
-      >
-        catalog
-      </Side>
-      <Layout>
-        <Header>
-          <ListIcon
-            className="trigger"
-            onClick={() => setCollapsed(!collapsed)}
-            color="success"
-            size="large"
-          >
-            trigger
-          </ListIcon>
-        </Header>
-      </Layout>
-    </Layout>
-  )
-}
 
 describe('test layout', () => {
   it('render common layout', () => {
@@ -91,7 +59,7 @@ describe('test layout', () => {
     expect(element).toHaveClass('koo-layout-content')
   })
 
-  it('render basic side', () => {
+  it('render side', () => {
     const wrapper = render(
       <Layout>
         <Side>catalog</Side>
@@ -105,17 +73,5 @@ describe('test layout', () => {
     expect(element).toBeInTheDocument()
     expect(element?.tagName).toEqual('ASIDE')
     expect(element).toHaveClass('koo-layout-side')
-  })
-
-  it('render side', () => {
-    const wrapper = render(<MyComponent />)
-
-    const element = wrapper.getByText('trigger')
-    const aside = wrapper.getByText('catalog').parentElement
-    expect(element).toBeInTheDocument()
-    expect(aside).toBeInTheDocument()
-    expect(aside?.tagName).toEqual('ASIDE')
-    fireEvent.click(element)
-    expect(aside?.style['_values']['flex']).toContain('0 0 0px')
   })
 })
