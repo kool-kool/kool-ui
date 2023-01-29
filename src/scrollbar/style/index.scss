@@ -1,0 +1,55 @@
+.koo-scrollbar-root {
+  box-sizing: content-box;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.koo-scrollbar-wrap {
+  box-sizing: border-box;
+  overflow: scroll;
+  height: calc(100% + 20px);
+}
+
+.koo-scrollbar-hide-nativebar {
+  margin: 0 -20px -20px 0;
+}
+
+.koo-scrollbar-bar {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+}
+
+.koo-scrollbar-bar-vertical {
+  height: 100%;
+  width: 6px;
+  top: 0;
+  right: 0;
+}
+
+.koo-scrollbar-bar-horizontal {
+  width: 100%;
+  height: 6px;
+  bottom: 0;
+  left: 0;
+}
+
+.koo-scrollbar-thumb {
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 3px;
+  background-color: var(--koo-gray-6);
+  transition: background-color 0.15s;
+
+  &:hover {
+    background-color: var(--koo-gray-7);
+  }
+}
+
+.koo-scroll-bar-visibility {
+  visibility: visible;
+  animation: koo-fade-in 0.5s both;
+}
