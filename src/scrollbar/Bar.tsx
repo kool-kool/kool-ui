@@ -1,5 +1,5 @@
 import React from 'react'
-import useUpdate from '../shared/hooks/useUpdate'
+import { useUpdate } from '../shared'
 import { renderThumbStyle, THUMB_MAP } from './utils'
 
 export interface BarProps {
