@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import omit from 'rc-util/lib/omit'
 import React, { useEffect, useRef, useState } from 'react'
 
-import { getPrefixCls } from '../Layout'
+import { getPrefixCls } from '../../shared'
 
 import { ArrowLeftIcon, ArrowRightIcon, ListIcon } from '../../index'
 

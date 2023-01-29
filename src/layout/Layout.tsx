@@ -1,6 +1,7 @@
+import classNames from 'classnames'
 import React from 'react'
 
-import classNames from 'classnames'
+import { getPrefixCls } from '../shared/index'
 
 type tagsNames = 'header' | 'footer' | 'main' | 'section'
 
@@ -20,13 +21,6 @@ interface BasicPropsWithTag extends BasicLayoutProps {
 }
 
 // helper function
-export const getPrefixCls = (suffix?: string, customizePrefix?: string) => {
-  if (customizePrefix) {
-    return customizePrefix
-  }
-  return suffix ? `koo-${suffix}` : `koo`
-}
-
 function generator({ tagName, displayName, suffixClassnames }: GeneratorProps) {
   return (BasicComponent: any) => {
     const Adapter = React.forwardRef<HTMLElement, BasicLayoutProps>(
