@@ -2,7 +2,9 @@ import classNames from 'classnames'
 import omit from 'rc-util/lib/omit'
 import React, { useEffect, useRef, useState } from 'react'
 
-import { getPrefixCls } from '../Layout'
+import { getPrefixCls } from '../../shared'
+
+import { ArrowLeftIcon, ArrowRightIcon, ListIcon } from '../../index'
 
 const breakPointMap = {
   xs: '480px',
@@ -37,14 +39,6 @@ export interface SideState {
   below: boolean
 }
 
-const generateId = (() => {
-  let i = 0
-  return (prefix = '') => {
-    i++
-    return `${prefix}${i}`
-  }
-})()
-
 const isNumeric = (value: any): boolean =>
   !isNaN(parseFloat(value)) && isFinite(value)
 
@@ -58,7 +52,7 @@ const Side = React.forwardRef<HTMLDivElement, SideProps>((props, ref) => {
     style = {},
     collapsible = false,
     reverseArrow = false,
-    width = 300,
+    width = 200,
     collapsedWidth = 80,
     zeroWidthTriggerStyle,
     breakpoint,
@@ -99,29 +93,30 @@ const Side = React.forwardRef<HTMLDivElement, SideProps>((props, ref) => {
 
   useEffect(() => {
     function responsiveHandler(mql: mqlType) {
-      return responsiveHandlerRef.current?.(mql)
+      return responsiveHandlerRef.current!(mql)
     }
 
-    let mqlList: MediaQueryList
+    let mql: MediaQueryList
     if (typeof window !== 'undefined') {
       const { matchMedia } = window
       if (matchMedia! && breakpoint && breakpoint in breakPointMap) {
-        mqlList = matchMedia(`(max-width: ${breakPointMap[breakpoint]})`)
+        mql = matchMedia(`(max-width: ${breakPointMap[breakpoint]})`)
+
         try {
-          mqlList.addEventListener('change', responsiveHandler)
+          mql.addEventListener('change', responsiveHandler)
         } catch (error) {
-          mqlList.addListener(responsiveHandler)
+          mql.addListener(responsiveHandler)
         }
 
-        responsiveHandler(mqlList)
+        responsiveHandler(mql)
       }
     }
 
     return () => {
       try {
-        mqlList?.removeEventListener('change', responsiveHandler)
+        mql?.removeEventListener('change', responsiveHandler)
       } catch (error) {
-        mqlList?.removeListener(responsiveHandler)
+        mql?.removeListener(responsiveHandler)
       }
     }
   }, [breakpoint])
@@ -132,7 +127,7 @@ const Side = React.forwardRef<HTMLDivElement, SideProps>((props, ref) => {
 
   const renderSide = () => {
     const prefixClass = getPrefixCls('layout-side', customPrefix)
-    const divProps = omit(props, [`collapsed`])
+    const divProps = omit(other, [`collapsed`])
     const rawWidth = collapsed ? collapsedWidth : width
 
     const sideWidth = isNumeric(rawWidth) ? `${rawWidth}px` : String(rawWidth)
@@ -149,11 +144,17 @@ const Side = React.forwardRef<HTMLDivElement, SideProps>((props, ref) => {
           )}
           style={zeroWidthTriggerStyle}
         >
-          {trigger}
+          {trigger || <ListIcon />}
         </span>
       ) : null
 
+    const iconObj = {
+      expanded: reverseArrow ? <ArrowRightIcon /> : <ArrowLeftIcon />,
+      collapsed: reverseArrow ? <ArrowLeftIcon /> : <ArrowRightIcon />
+    }
+
     const status = collapsed ? 'collapsed' : 'expanded'
+    const defaultTrigger = iconObj[status]
 
     const triggerDom =
       trigger !== null
@@ -163,7 +164,7 @@ const Side = React.forwardRef<HTMLDivElement, SideProps>((props, ref) => {
               onClick={toggle}
               style={{ width: sideWidth }}
             >
-              {trigger}
+              {trigger || defaultTrigger}
             </div>
           )
         : null
