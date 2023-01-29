@@ -1,0 +1,25 @@
+@mixin create-size($size) {
+  font-size: $size;
+}
+
+.koo-icon {
+  &-root {
+    width: 1em;
+    height: 1em;
+    fill: currentcolor;
+    stroke: currentcolor;
+    user-select: none;
+  }
+
+  &-small {
+    @include create-size($size: 1.25rem);
+  }
+
+  &-normal {
+    @include create-size($size: 1.5rem);
+  }
+
+  &-large {
+    @include create-size($size: 2rem);
+  }
+}

@@ -6,11 +6,17 @@
 // button
 @import '../button/style/index';
 
-//// layout
-// @import '../layout/style/';
+// layout
+@import '../layout/style/';
 
 // link
 @import '../link/style/index';
+
+// icon
+@import '../icon/style/index';
+
+// 全局通用样式
+@import './global';
 
 // Tabs
 @import '../tabs/style';

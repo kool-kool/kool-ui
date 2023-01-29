@@ -4,7 +4,15 @@ export type Underline = 'hover' | 'none'
 
 export interface LinkProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  /**
+   * @description 控制何时应该有下划线
+   * @default     none
+   */
   underline?: Underline
+  /**
+   * @description 是否禁用
+   * @default     false
+   */
   disabled?: boolean
 }
 
