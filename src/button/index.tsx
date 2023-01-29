@@ -3,7 +3,7 @@ import React, { ButtonHTMLAttributes, ReactNode } from 'react'
 // import { ButtonProps } from '../shared/types/utils'
 
 interface ButtonProps
-  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type' | 'onClick'> {
+  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'> {
   children?: ReactNode
   classname?: string // 新加入的className
   size?: 'large' | 'small' | 'middle'
@@ -17,7 +17,6 @@ interface ButtonProps
   HtmlType?: string
   href?: string
   shape?: 'default' | 'circle' | 'round'
-  onClick?: () => void
 }
 
 const Button = (Props: ButtonProps) => {
@@ -36,12 +35,12 @@ const Button = (Props: ButtonProps) => {
     onClick,
     ...reset
   } = Props
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (disabled || loading) {
       return
     }
     if (onClick) {
-      onClick()
+      onClick?.(e)
     }
   }
   const classes = classNames('koo-btn', classname, {
