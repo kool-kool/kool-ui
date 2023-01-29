@@ -1,7 +1,8 @@
-import './style/index.scss'
-export { Breadcrumbs, BreadcrumbsSeparator } from './breadcrumb'
-export type { BreadcrumbProps } from './breadcrumb'
-export { default as Button } from './button'
+import "./style/index.scss";
+
+export { Breadcrumbs, BreadcrumbsSeparator } from "./breadcrumb";
+export type { BreadcrumbProps } from "./breadcrumb";
+export { default as Button } from "./button";
 export {
   ArrowLeftIcon,
   ArrowRightIcon,
@@ -9,9 +10,11 @@ export {
   IconWrapper,
   ListIcon,
   MoreHorizIcon
-} from './icon'
-export { default as Layout } from './layout'
-export { Link, underlineClassName } from './link'
-export type { LinkProps, Underline } from './link'
-export { childrenToArray } from './shared'
-export { default as Tabs } from './tabs'
+} from "./icon";
+export { default as Layout } from "./layout";
+export { Link, underlineClassName } from "./link";
+export type { LinkProps, Underline } from "./link";
+export { childrenToArray } from "./shared";
+export { default as Tabs } from "./tabs";
+export { default as Switch } from "./switch";
+
