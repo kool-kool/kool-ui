@@ -1,4 +1,4 @@
-import { Breadcrumbs, Link } from 'kool-ui'
+import { Breadcrumbs, Link, RoundKeyboardArrowRightIcon } from 'kool-ui'
 import React from 'react'
 
 const BreadcrumbItems = (
@@ -11,7 +11,18 @@ const BreadcrumbItems = (
 )
 
 const App = () => {
-  return <Breadcrumbs separator="-">{BreadcrumbItems}</Breadcrumbs>
+  return (
+    <div>
+      <Breadcrumbs separator="-">{BreadcrumbItems}</Breadcrumbs>
+      <Breadcrumbs
+        separator={
+          <RoundKeyboardArrowRightIcon style={{ fontSize: '1.25rem' }} />
+        }
+      >
+        {BreadcrumbItems}
+      </Breadcrumbs>
+    </div>
+  )
 }
 
 export default App
