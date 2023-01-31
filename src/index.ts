@@ -8,7 +8,8 @@ export {
   HomeIcon,
   IconWrapper,
   ListIcon,
-  MoreHorizIcon
+  MoreHorizIcon,
+  RoundKeyboardArrowRightIcon
 } from './icon'
 export { default as Layout } from './layout'
 export { Link, underlineClassName } from './link'

@@ -5,10 +5,7 @@ interface ThumbMapValue {
   size: 'height' | 'width'
   axis: 'Y' | 'X'
   direction: 'top' | 'left'
-  client: 'clientY' | 'clientX'
   offset: 'offsetHeight' | 'offsetWidth'
-  scroll: 'scrollTop' | 'scrollLeft'
-  scrollSize: 'scrollHeight' | 'scrollWidth'
   screen: 'screenY' | 'screenX'
 }
 
@@ -20,20 +17,14 @@ export const THUMB_MAP: Record<string, ThumbMapValue> = {
     size: 'height',
     axis: 'Y',
     direction: 'top',
-    client: 'clientY',
     offset: 'offsetHeight',
-    scroll: 'scrollTop',
-    scrollSize: 'scrollHeight',
     screen: 'screenY'
   },
   horizontal: {
     size: 'width',
     axis: 'X',
     direction: 'left',
-    client: 'clientX',
     offset: 'offsetWidth',
-    scroll: 'scrollLeft',
-    scrollSize: 'scrollWidth',
     screen: 'screenX'
   }
 }

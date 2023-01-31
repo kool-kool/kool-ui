@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 import { Scrollbar } from '../index'
 
@@ -21,7 +21,6 @@ test('className', () => {
   expect(wrapElement.children[2].className).toContain(
     'koo-scrollbar-bar-horizontal'
   )
-  screen.debug()
 })
 
 test('correct rendering', () => {
