@@ -10,7 +10,9 @@ toc: content
 
 ## 代码演示
 
-<code src="./demo/BasicUsage.tsx">基础用法</code>
+### 基础使用
+
+<code src="./demo/BasicUsage.tsx"></code>
 <code src="./demo/CustomSeparator.tsx">自定义分隔符</code>
 <code src="./demo/Collapsed.tsx">子项超出折叠</code>
 
@@ -20,7 +22,7 @@ toc: content
 
 | 参数      | 类型      | 默认值 | 描述                                                                                             |
 | :-------- | :-------- | :----- | :----------------------------------------------------------------------------------------------- |
-| separator | ReactNode | /      | 自定义分隔符                                                                                     |
+| separator | ReactNode |        | 自定义分隔符                                                                                     |
 | maxItem   | number    | 7      | 指定要显示的面包屑的最大数量。当数量超过最大值时，将只显示第一个项和最后一个项，中间带有省略号。 |
 
 ### css

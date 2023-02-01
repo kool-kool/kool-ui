@@ -1,4 +1,6 @@
 import React from 'react'
+import Button from '../button'
+import { MoreHorizIcon } from '../icon'
 import toArray from '../shared/utils/childrenToArray'
 
 export interface BreadcrumbProps
@@ -51,7 +53,13 @@ const Breadcrumbs: React.FC<BreadcrumbProps> = ({
         crumbsArray[1],
         <li key={keyIndex++}>
           {/* TODO: 替换成button组件 */}
-          <button onClick={() => setShrink(false)}>shrink</button>
+          {/* <button onClick={() => setShrink(false)}>shrink</button> */}
+          <Button size="small" type="text" onClick={() => setShrink(false)}>
+            <MoreHorizIcon
+              size="small"
+              style={{ width: '1.5rem', height: '1rem' }}
+            />
+          </Button>
         </li>,
         crumbsArray[crumbsArray.length - 2],
         crumbsArray[crumbsArray.length - 1]
