@@ -39,6 +39,7 @@ export interface SideState {
   below: boolean
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const isNumeric = (value: any): boolean =>
   !isNaN(parseFloat(value)) && isFinite(value)
 
