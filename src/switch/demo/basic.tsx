@@ -1,10 +1,15 @@
-import React from "react";
-import { Switch } from "kool-ui";
+import { Switch } from 'kool-ui'
+import React from 'react'
 
 const App: React.FC = () => {
-  const [isChecked, setIsChecked] = React.useState(false);
+  const [isChecked, setIsChecked] = React.useState(false)
 
-  return <Switch checked={isChecked} onChange={() => setIsChecked((prev) => !prev)} />;
-};
+  return (
+    <Switch
+      checked={isChecked}
+      onChange={() => setIsChecked((prev) => !prev)}
+    />
+  )
+}
 
-export default App;
+export default App
