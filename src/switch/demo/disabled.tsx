@@ -1,12 +1,12 @@
-import React from "react";
-import { Switch } from "kool-ui";
+import { Switch } from 'kool-ui'
+import React from 'react'
 
 const onChange = (checked: boolean) => {
-  console.log(`switch to ${checked}`);
-};
+  console.log(`switch to ${checked}`)
+}
 
 const App2: React.FC = () => {
-  const [isChecked, setIsChecked] = React.useState(false);
+  const [isChecked, setIsChecked] = React.useState(false)
 
   // const toggle = () => {
   //   setDisabled(!disabled1);
@@ -14,11 +14,14 @@ const App2: React.FC = () => {
 
   return (
     <div>
-      <Switch checked={false} disabled onChange={() => setIsChecked((prev) => !prev)} />
+      <Switch
+        checked={false}
+        disabled
+        onChange={() => setIsChecked((prev) => !prev)}
+      />
       <Switch checked disabled onChange={() => setIsChecked((prev) => !prev)} />
     </div>
-  );
-};
+  )
+}
 
-
-export default App2;
+export default App2

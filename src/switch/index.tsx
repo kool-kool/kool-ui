@@ -1,19 +1,19 @@
-import React, { ReactNode } from "react";
-import PropTypes from "prop-types";
-import classNames from "classnames";
-import "./style/index.scss";
+import classNames from 'classnames'
+import PropTypes from 'prop-types'
+import React, { ReactNode } from 'react'
+import './style/index.scss'
 
 export interface SwitchProps {
-  checked?: boolean;
+  checked?: boolean
   // defaultChecked?: boolean;
-  disabled?: boolean;
-  size?: "default" | "small";
-  loading?: boolean;
-  className?: string;
-  children?: ReactNode;
-  autoFocus?: boolean;
-  onChange?: Function;
-  onClick?: Function;
+  disabled?: boolean
+  size?: 'default' | 'small'
+  loading?: boolean
+  className?: string
+  children?: ReactNode
+  autoFocus?: boolean
+  onChange?: Function
+  onClick?: Function
 }
 
 const Switch: React.FC<SwitchProps> = (props: SwitchProps) => {
@@ -28,35 +28,39 @@ const Switch: React.FC<SwitchProps> = (props: SwitchProps) => {
     children,
     onChange,
     onClick
-  } = props;
+  } = props
   const classes = classNames(
-    "koo-switch",
+    'koo-switch',
     {
-      ["koo-switch-small"]: size === "small",
-      ["koo-switch-disabled"]: disabled,
-      ["koo-switch-loading"]: loading
+      ['koo-switch-small']: size === 'small',
+      ['koo-switch-disabled']: disabled,
+      ['koo-switch-loading']: loading
     },
     className
-  );
+  )
 
-  function handleClick(e: any & {
-    target: HTMLInputElement
-  }) {
+  function handleClick(
+    e: any & {
+      target: HTMLInputElement
+    }
+  ) {
     if (onClick) {
-      onClick(e.target.checked, e);
+      onClick(e.target.checked, e)
     }
 
-    return;
+    return
   }
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement> & {
-    target: HTMLInputElement
-  }) {
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement> & {
+      target: HTMLInputElement
+    }
+  ) {
     if (onChange) {
-      onChange(e.target.checked, e);
+      onChange(e.target.checked, e)
     }
 
-    return;
+    return
   }
 
   return (
@@ -76,8 +80,8 @@ const Switch: React.FC<SwitchProps> = (props: SwitchProps) => {
       </label>
       {children}
     </div>
-  );
-};
+  )
+}
 
 Switch.propTypes = {
   /**
@@ -95,7 +99,7 @@ Switch.propTypes = {
   /**
    * 开关大小
    */
-  size: PropTypes.oneOf(["default", "small"]),
+  size: PropTypes.oneOf(['default', 'small']),
   /**
    * 开关初识时是否默认选择
    */
@@ -108,14 +112,12 @@ Switch.propTypes = {
    * 是否为加载状态
    */
   loading: PropTypes.bool
-};
+}
 
 Switch.defaultProps = {
-  size: "default",
-  onChange: () => {
-  },
-  onClick: () => {
-  }
-};
+  size: 'default',
+  onChange: () => {},
+  onClick: () => {}
+}
 
-export default Switch;
+export default Switch
