@@ -3,6 +3,12 @@ import PropTypes from 'prop-types'
 import React, { ReactNode } from 'react'
 import './style/index.scss'
 
+export type SwitchChangeEventHandler = (
+  checked: boolean,
+  event: React.MouseEvent<HTMLButtonElement>
+) => void
+export type SwitchClickEventHandler = SwitchChangeEventHandler
+
 export interface SwitchProps {
   checked?: boolean
   // defaultChecked?: boolean;
@@ -12,8 +18,8 @@ export interface SwitchProps {
   className?: string
   children?: ReactNode
   autoFocus?: boolean
-  onChange?: Function
-  onClick?: Function
+  onChange?: SwitchChangeEventHandler
+  onClick?: SwitchClickEventHandler
 }
 
 const Switch: React.FC<SwitchProps> = (props: SwitchProps) => {
@@ -52,7 +58,7 @@ const Switch: React.FC<SwitchProps> = (props: SwitchProps) => {
   }
 
   function handleChange(
-    e: React.ChangeEvent<HTMLInputElement> & {
+    e: any & {
       target: HTMLInputElement
     }
   ) {
@@ -115,9 +121,7 @@ Switch.propTypes = {
 }
 
 Switch.defaultProps = {
-  size: 'default',
-  onChange: () => {},
-  onClick: () => {}
+  size: 'default'
 }
 
 export default Switch
