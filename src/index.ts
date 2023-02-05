@@ -1,8 +1,8 @@
-import "./style/index.scss";
+import './style/index.scss'
 
-export { Breadcrumbs, BreadcrumbsSeparator } from "./breadcrumb";
-export type { BreadcrumbProps } from "./breadcrumb";
-export { default as Button } from "./button";
+export { Breadcrumbs, BreadcrumbsSeparator } from './breadcrumb'
+export type { BreadcrumbProps } from './breadcrumb'
+export { Button } from './button'
 export {
   ArrowLeftIcon,
   ArrowRightIcon,
@@ -18,6 +18,7 @@ export type { LinkProps, Underline } from './link'
 export { Scrollbar } from './scrollbar'
 export type { ScrollbarProps } from './scrollbar'
 export { childrenToArray } from './shared'
-export { default as Slider } from './slider'
+export { Slider } from './slider'
 export { default as Space } from './space'
-export { default as Tabs } from './tabs'
+export { default as Switch } from './switch'
+export { Tabs } from './tabs'
