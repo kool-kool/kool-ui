@@ -4,26 +4,31 @@ import React, { FC, InputHTMLAttributes, ReactElement } from 'react'
 interface InputProps
   extends Omit<InputHTMLAttributes<HTMLElement>, 'size' | 'prefix'> {
   disabled?: boolean
-  size?: 'lg' | 'sm'
+  size?: 'large' | 'small'
   prefix?: string | ReactElement
   suffix?: string | ReactElement
+  suffixFn?: () => void
 }
 
-export const Input: FC<InputProps> = (props) => {
-  const { disabled, size, prefix, suffix, ...restProps } = props
+const Input: FC<InputProps> = (props) => {
+  const { disabled, size, prefix, suffix, suffixFn, ...restProps } = props
 
-  const classes = classNames('koo-input-wrapper', {
+  const classes = classNames('koo-input', {
     'koo-input-disabled': disabled,
     [`koo-input-${size}`]: size,
     'koo-input-prefix': !!prefix,
     'koo-input-suffix': !!suffix
   })
   return (
-    <div className={classes}>
+    <div className={'koo-input-wrapper'}>
       {prefix && <div className="koo-input-group-prefix">{prefix}</div>}
 
-      <input disabled={disabled} {...restProps} />
-      {suffix && <div className="koo-input-group-suffix">{suffix}</div>}
+      <input className={classes} disabled={disabled} {...restProps} />
+      {suffix && (
+        <div className="koo-input-group-suffix" onClick={suffixFn}>
+          {suffix}
+        </div>
+      )}
     </div>
   )
 }

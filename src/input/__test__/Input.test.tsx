@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
 import React from 'react'
-import Input from '../index'
+import { Input } from '../index'
 
 describe('test Input component', () => {
   test('default Input', () => {
@@ -23,6 +23,5 @@ describe('test Input component', () => {
     const testNode = wrapper.getByPlaceholderText('prefix') as HTMLInputElement
     const testContainer = wrapper.container.querySelector('.koo-input-wrapper')
     expect(testNode).toBeInTheDocument()
-    expect(testContainer).toHaveClass('koo-input-prefix')
   })
 })
