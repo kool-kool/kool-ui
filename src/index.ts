@@ -5,8 +5,13 @@ export type { BreadcrumbProps } from './breadcrumb'
 export { default as Button } from './button'
 export { default as Carousel } from './carouselMap'
 export {
+  ArrowDownIcon,
   ArrowLeftIcon,
   ArrowRightIcon,
+  ArrowUpIcon,
+  CheckIcon,
+  CloseIcon,
+  ExclamationIcon,
   HomeIcon,
   IconWrapper,
   ListIcon,
