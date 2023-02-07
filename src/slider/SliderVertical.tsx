@@ -1,8 +1,7 @@
 import classNames from 'classnames'
-import UseSlider from 'kool-ui/slider/hooks/useSlider'
 import { number } from 'prop-types'
 import React, { useEffect, useState } from 'react'
-import './style/index.scss'
+import UseSlider from './hooks/useSlider'
 
 export interface SliderVerticalProps {
   lineHeight?: number | string

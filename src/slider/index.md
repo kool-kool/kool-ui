@@ -27,19 +27,19 @@ toc: content
 
 ### props
 
-|     参数     |        类型        |      默认值      |                                    描述                                    |
-| :----------: | :----------------: | :--------------: | :------------------------------------------------------------------------: | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-|   disabled   |      boolean       |      false       |                                  是否禁用                                  |
-|     max      |       number       |       100        |                                   最大值                                   |
-|     min      |       number       |        0         |                                   最小值                                   |
-|    range     |      boolean       |      false       |                                 双滑块模式                                 |
-|     step     |       number       |       null       |                                     1                                      | 步长，取值必须大于 0，并且可被 (max - min) 整除。                                                  |
-|    value     |       number       | [number, number] |                                     -                                      | 设置当前取值。当 range 为 false 时，使用 number，否则用 [number, number]                           |
-|   onChange   |  (value) => void   |        -         | 当 Slider 的值发生改变时，会触发 onChange 事件，并把改变后的值作为参数传入 |
-|   disabled   |      boolean       |      false       |                        值为 true 时，滑块为禁用状态                        |
-| defaultValue |       number       | [number, number] |                                     0                                      | [55, 45]                                                                                           | 设置初始取值。当 range 为 false 时，使用 number，否则用 [number, number] |
-|  formatter   | value => ReactNode |       null       |                                     -                                      | Slider 会把当前值传给 formatter，并在 Tooltip 中显示 formatter 的返回值，若为 null，则隐藏 Tooltip |
-|  lineWidth   |       number       |        -         |                                    宽度                                    |
+|     参数     |           类型            |    默认值    |                                                描述                                                |
+| :----------: | :-----------------------: | :----------: | :------------------------------------------------------------------------------------------------: |
+|   disabled   |          boolean          |    false     |                                              是否禁用                                              |
+|     max      |          number           |     100      |                                               最大值                                               |
+|     min      |          number           |      0       |                                               最小值                                               |
+|    range     |          boolean          |    false     |                                             双滑块模式                                             |
+|     step     |          number           |      1       |                         步长，取值必须大于 0，并且可被 (max - min) 整除。                          |
+|    value     |  number/[number, number]  |      -       |              设置当前取值。当 range 为 false 时，使用 number，否则用 [number, number]              |
+|   onChange   |      (value) => void      |      -       |             当 Slider 的值发生改变时，会触发 onChange 事件，并把改变后的值作为参数传入             |
+|   disabled   |          boolean          |    false     |                                    值为 true 时，滑块为禁用状态                                    |
+| defaultValue | number / [number, number] | 0 / [55, 45] |              设置初始取值。当 range 为 false 时，使用 number，否则用 [number, number]              |
+|  formatter   | value => ReactNode/ null  |      -       | Slider 会把当前值传给 formatter，并在 Tooltip 中显示 formatter 的返回值，若为 null，则隐藏 Tooltip |
+|  lineWidth   |          number           |      -       |                                                宽度                                                |
 
 ### vertical
 

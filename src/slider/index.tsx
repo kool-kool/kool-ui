@@ -1,5 +1,5 @@
-import NormalSlider from 'kool-ui/slider/Slider'
-import SliderVertical from 'kool-ui/slider/SliderVertical'
+import NormalSlider from './Slider'
+import SliderVertical from './SliderVertical'
 
 type SliderTYpe = typeof NormalSlider
 
