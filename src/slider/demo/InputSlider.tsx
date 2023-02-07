@@ -1,6 +1,5 @@
-import { Slider, Switch } from 'kool-ui'
+import { Input, Slider, Switch } from 'kool-ui'
 import React, { useState } from 'react'
-import Input from '../../Input/'
 
 const BasicSlider: React.FC = () => {
   const [disable, setDisable] = useState<boolean>(false)

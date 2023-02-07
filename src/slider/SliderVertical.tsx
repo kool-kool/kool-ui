@@ -13,7 +13,7 @@ export interface SliderVerticalProps {
   disable?: boolean
   classname?: string
   onChange?: (value: number) => void
-  value?: number
+  value?: number | [number, number]
   step?: number
   formatter?: ((value: string) => string) | null
 }
@@ -86,10 +86,10 @@ const SliderVertical = (Props: SliderVerticalProps) => {
     } else if (!range && defaultValue instanceof Array) {
       throw new Error('it must be number')
     }
-
-    if (value) {
-      const temp = Math.ceil(((value - min) / (max - min)) * 100)
-      setDown(temp)
+    if (range && value instanceof number) {
+      throw new Error('value must be Array')
+    } else if (!range && value instanceof Array) {
+      throw new Error('value must be number')
     }
 
     if (range && defaultValue instanceof Array) {
@@ -109,6 +109,21 @@ const SliderVertical = (Props: SliderVerticalProps) => {
       setDown(55)
       second.setDown(45)
     }
+
+    if (range && value instanceof Array) {
+      if (
+        value[0] > max ||
+        value[0] < min ||
+        value[1] > max ||
+        value[1] < min
+      ) {
+        throw new Error('defaultValue超出界限')
+      }
+      const tempMax = Math.max(value[0], value[1])
+      const tempMin = Math.min(value[0], value[1])
+      setDown(((tempMax - min) / (max - min)) * 100)
+      second.setDown(((tempMin - min) / (max - min)) * 100)
+    }
     if (typeof defaultValue === 'number') {
       if (defaultValue > max || defaultValue < min) {
         throw new Error('defaultValue 超出界限')
@@ -116,11 +131,36 @@ const SliderVertical = (Props: SliderVerticalProps) => {
         setDown(dealTextRollback(defaultValue))
       }
     }
+    if (typeof value === 'number') {
+      if (value > max || value < min) {
+        throw new Error('value 超出界限')
+      } else {
+        setDown(dealTextRollback(value))
+      }
+    }
   }, [])
 
   useEffect(() => {
-    if (value) {
-      setDown(dealTextRollback(value))
+    if (range && value instanceof Array) {
+      if (
+        value[0] > max ||
+        value[0] < min ||
+        value[1] > max ||
+        value[1] < min
+      ) {
+        throw new Error('defaultValue超出界限')
+      }
+      const tempMax = Math.max(value[0], value[1])
+      const tempMin = Math.min(value[0], value[1])
+      setDown(((tempMax - min) / (max - min)) * 100)
+      second.setDown(((tempMin - min) / (max - min)) * 100)
+    }
+    if (typeof value === 'number') {
+      if (value > max || value < min) {
+        throw new Error('value 超出界限')
+      } else {
+        setDown(dealTextRollback(value))
+      }
     }
   }, [value])
 

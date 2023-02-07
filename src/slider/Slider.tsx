@@ -13,7 +13,7 @@ export interface SliderProps {
   disable?: boolean
   classname?: string
   onChange?: (value: number) => void
-  value?: number
+  value?: number | [number, number]
   step?: number
   formatter?: ((value: string) => string) | null
 }
@@ -98,8 +98,10 @@ const NormalSlider = (Props: SliderProps) => {
       throw new Error('it must be number')
     }
 
-    if (value) {
-      setLeft(dealTextRollback(value))
+    if (range && value instanceof number) {
+      throw new Error('value must be Array')
+    } else if (!range && value instanceof Array) {
+      throw new Error('value must be number')
     }
 
     if (range && defaultValue instanceof Array) {
@@ -119,6 +121,21 @@ const NormalSlider = (Props: SliderProps) => {
       setLeft(55)
       second.setLeft(45)
     }
+
+    if (range && value instanceof Array) {
+      if (
+        value[0] > max ||
+        value[0] < min ||
+        value[1] > max ||
+        value[1] < min
+      ) {
+        throw new Error('defaultValue超出界限')
+      }
+      const tempMax = Math.max(value[0], value[1])
+      const tempMin = Math.min(value[0], value[1])
+      setLeft(((tempMax - min) / (max - min)) * 100)
+      second.setLeft(((tempMin - min) / (max - min)) * 100)
+    }
     if (typeof defaultValue === 'number') {
       if (defaultValue > max || defaultValue < min) {
         throw new Error('defaultValue 超出界限')
@@ -126,11 +143,36 @@ const NormalSlider = (Props: SliderProps) => {
         setLeft(dealTextRollback(defaultValue))
       }
     }
+    if (typeof value === 'number') {
+      if (value > max || value < min) {
+        throw new Error('value 超出界限')
+      } else {
+        setLeft(dealTextRollback(value))
+      }
+    }
   }, [])
 
   useEffect(() => {
-    if (value) {
-      setLeft(dealTextRollback(value))
+    if (range && value instanceof Array) {
+      if (
+        value[0] > max ||
+        value[0] < min ||
+        value[1] > max ||
+        value[1] < min
+      ) {
+        throw new Error('defaultValue超出界限')
+      }
+      const tempMax = Math.max(value[0], value[1])
+      const tempMin = Math.min(value[0], value[1])
+      setLeft(((tempMax - min) / (max - min)) * 100)
+      second.setLeft(((tempMin - min) / (max - min)) * 100)
+    }
+    if (typeof value === 'number') {
+      if (value > max || value < min) {
+        throw new Error('value 超出界限')
+      } else {
+        setLeft(dealTextRollback(value))
+      }
     }
   }, [value])
 
