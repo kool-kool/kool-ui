@@ -19,3 +19,9 @@ toc: content
 <code src="./demo/BasicSlider.tsx">基本类型</code>
 
 <code src="./demo/SilderRange.tsx">Range 类型</code>
+<code src="./demo/BasicSliderVertical.tsx">垂直类型</code>
+<code src="./demo/SliderRangeVertical.tsx">垂直 Range 类型</code>
+<code src="./demo/InputSlider.tsx">input 类型</code>
+<code src="./demo/StepSlider.tsx">step 类型</code>
+<code src="./demo/FormatterSlider.tsx">formatter 类型</code>
+<code src="./demo/StepVerticalSlider.tsx">step vertical 类型</code>

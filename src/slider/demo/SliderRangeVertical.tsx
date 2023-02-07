@@ -3,8 +3,8 @@ import React from 'react'
 
 const SliderRange: React.FC = () => {
   return (
-    <div style={{ width: '100%' }}>
-      <Slider range={true} min={10} max={20} defaultValue={[11, 14]} />
+    <div style={{ width: '100%', height: '400px' }}>
+      <Slider.Vertical range={true} min={10} max={20} defaultValue={[11, 14]} />
     </div>
   )
 }

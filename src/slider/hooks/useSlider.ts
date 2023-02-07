@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-const useSlider = (disbale: boolean) => {
+const useSlider = (disbale: boolean, step?: number, value?: number) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const [left, setLeft] = useState(0)
   const [down, setDown] = useState(0)
@@ -13,16 +13,38 @@ const useSlider = (disbale: boolean) => {
       const CurrentLeft = containerRef.current.getBoundingClientRect().left
       const CurrentTop = containerRef.current.getBoundingClientRect().top
       if (X <= CurrentWidth + CurrentLeft && X >= CurrentLeft) {
-        const temp = Math.ceil(((X - CurrentLeft) / CurrentWidth) * 100)
-        setLeft(temp)
+        if (step && value) {
+          const temp = Math.round(((X - CurrentLeft) / CurrentWidth) * 100)
+          const stepTemp = (step / value) * 100
+          if (temp % stepTemp === 0) {
+            setLeft(temp)
+          } else {
+            const stepping = Math.round(temp / stepTemp) * stepTemp
+            setLeft(stepping)
+          }
+        } else {
+          const temp = Math.ceil(((X - CurrentLeft) / CurrentWidth) * 100)
+          setLeft(temp)
+        }
       } else if (X > CurrentWidth + CurrentLeft) {
         setLeft(100)
       } else if (X < CurrentLeft) {
         setLeft(0)
       }
       if (Y <= CurrentHeight + CurrentTop && Y >= CurrentTop) {
-        const temp = Math.ceil(((Y - CurrentTop) / CurrentHeight) * 100)
-        setDown(temp)
+        if (step && value) {
+          const temp = Math.round(((Y - CurrentTop) / CurrentHeight) * 100)
+          const stepTemp = (step / value) * 100
+          if (temp % stepTemp === 0) {
+            setDown(temp)
+          } else {
+            const stepping = Math.round(temp / stepTemp) * stepTemp
+            setDown(stepping)
+          }
+        } else {
+          const temp = Math.ceil(((Y - CurrentTop) / CurrentHeight) * 100)
+          setDown(temp)
+        }
       } else if (Y > CurrentHeight + CurrentTop) {
         setDown(100)
       } else if (Y < CurrentTop) {
@@ -31,13 +53,17 @@ const useSlider = (disbale: boolean) => {
     }
   }
 
-  const HandleMouse = (e: React.MouseEvent<HTMLDivElement>) => {
+  const HandleMouse = (
+    e: React.MouseEvent<HTMLSpanElement | HTMLDivElement>
+  ) => {
     const X = e.clientX
     const Y = e.clientY
     dealBlock(X, Y)
   }
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (
+    e: React.MouseEvent<HTMLSpanElement | HTMLDivElement>
+  ) => {
     const X = e.clientX
     const Y = e.clientY
     dealBlock(X, Y)

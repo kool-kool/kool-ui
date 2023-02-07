@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom'
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
-import Button from '../index'
+import Button from '../button'
 
 test(' button exist ', () => {
   const wrapper = render(<Button> 123</Button>)

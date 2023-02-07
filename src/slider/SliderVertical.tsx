@@ -4,8 +4,8 @@ import { number } from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import './style/index.scss'
 
-export interface SliderProps {
-  lineWidth?: number | string
+export interface SliderVerticalProps {
+  lineHeight?: number | string
   min?: number
   max?: number
   range?: boolean
@@ -18,9 +18,9 @@ export interface SliderProps {
   formatter?: ((value: string) => string) | null
 }
 
-const NormalSlider = (Props: SliderProps) => {
+const SliderVertical = (Props: SliderVerticalProps) => {
   const {
-    lineWidth,
+    lineHeight,
     min = 0,
     max = 100,
     defaultValue,
@@ -38,20 +38,20 @@ const NormalSlider = (Props: SliderProps) => {
     HandleMouse,
     handleMouseMove,
     containerRef,
-    left,
-    setLeft,
-    select
-    // down,
-    // setDown
+    // left,
+    // setLeft,
+    select,
+    down,
+    setDown
   } = UseSlider(typeof disable === 'boolean' ? disable : false, step, max - min)
   const second = UseSlider(typeof disable === 'boolean' ? disable : false)
-  function dealRange(e: React.MouseEvent<HTMLDivElement>) {
-    const X = e.clientX
+  function dealRange(e: React.MouseEvent<HTMLDivElement | HTMLSpanElement>) {
+    const Y = e.clientY
     if (containerRef.current) {
-      const CurrentWidth = containerRef.current.getBoundingClientRect().width
-      const CurrentLeft = containerRef.current.getBoundingClientRect().left
-      const tempX = Math.floor(((X - CurrentLeft) / CurrentWidth) * 100)
-      if (Math.abs(tempX - second.left) > Math.abs(tempX - left)) {
+      const CurrentHeight = containerRef.current.getBoundingClientRect().height
+      const CurrentTop = containerRef.current.getBoundingClientRect().top
+      const tempY = Math.floor(((Y - CurrentTop) / CurrentHeight) * 100)
+      if (Math.abs(tempY - second.down) > Math.abs(tempY - down)) {
         HandleMouse(e)
       } else {
         second.HandleMouse(e)
@@ -76,22 +76,11 @@ const NormalSlider = (Props: SliderProps) => {
     return Math.ceil(((temp - min) / (max - min)) * 100)
   }
 
-  const classes = classNames('koo-slider', classname, {
+  const classes = classNames('koo-slider-vertical', classname, {
     'koo-slider-disable': disable
   })
 
   useEffect(() => {
-    if (step) {
-      let temp = max - min
-      let steps = step
-      while (steps < 1) {
-        steps = steps * 10
-        temp = temp * 10
-      }
-      if (temp % steps !== 0) {
-        throw new Error('step 不能被整除')
-      }
-    }
     if (range && defaultValue instanceof number) {
       throw new Error('range must be Array')
     } else if (!range && defaultValue instanceof Array) {
@@ -99,7 +88,8 @@ const NormalSlider = (Props: SliderProps) => {
     }
 
     if (value) {
-      setLeft(dealTextRollback(value))
+      const temp = Math.ceil(((value - min) / (max - min)) * 100)
+      setDown(temp)
     }
 
     if (range && defaultValue instanceof Array) {
@@ -113,59 +103,68 @@ const NormalSlider = (Props: SliderProps) => {
       }
       const tempMax = Math.max(defaultValue[0], defaultValue[1])
       const tempMin = Math.min(defaultValue[0], defaultValue[1])
-      setLeft(((tempMax - min) / (max - min)) * 100)
-      second.setLeft(((tempMin - min) / (max - min)) * 100)
+      setDown(((tempMax - min) / (max - min)) * 100)
+      second.setDown(((tempMin - min) / (max - min)) * 100)
     } else if (range) {
-      setLeft(55)
-      second.setLeft(45)
+      setDown(55)
+      second.setDown(45)
     }
     if (typeof defaultValue === 'number') {
       if (defaultValue > max || defaultValue < min) {
         throw new Error('defaultValue 超出界限')
       } else {
-        setLeft(dealTextRollback(defaultValue))
+        setDown(dealTextRollback(defaultValue))
       }
     }
   }, [])
 
   useEffect(() => {
     if (value) {
-      setLeft(dealTextRollback(value))
+      setDown(dealTextRollback(value))
     }
   }, [value])
 
   useEffect(() => {
-    onChange?.(left)
-  }, [left])
+    onChange?.(down)
+  }, [down])
 
   return (
     <div
       className={classes}
       ref={containerRef}
       style={{
-        width: lineWidth || '100%'
+        height: lineHeight || '100%'
       }}
     >
-      {showText ? (
-        <span
-          className="koo-slider-text"
-          style={{ left: `calc(${left}% - 10px)` }}
-        >
-          {dealText(left)}
-        </span>
-      ) : null}
-      {showTextRange ? (
-        <span
-          className="koo-slider-text"
-          style={{ left: `calc(${second.left}% - 10px)` }}
-        >
-          {dealText(second.left)}
-        </span>
-      ) : null}
-      <div ref={second.containerRef}>
+      <div
+        ref={second.containerRef}
+        style={{
+          width: '10px',
+          position: 'absolute',
+          display: 'inline-block',
+          height: lineHeight || '100%'
+        }}
+      >
+        {showText ? (
+          <span
+            className="koo-slider-text-vertical"
+            style={{ top: `calc(${down}% - 10px)` }}
+          >
+            {dealText(down)}
+          </span>
+        ) : null}
+        {showTextRange ? (
+          <span
+            className="koo-slider-text-vertical"
+            style={{ top: `calc(${second.down}% - 10px)` }}
+          >
+            {dealText(second.down)}
+          </span>
+        ) : null}
+
         {range ? (
           <div
-            className="koo-slider-short-left"
+            className="koo-slider-short-top"
             onMouseUp={(e) => {
               second.HandleMouse(e)
             }}
@@ -177,12 +176,12 @@ const NormalSlider = (Props: SliderProps) => {
                 second.handleMouseMove(e)
               }
             }}
-            style={{ width: `${second.left}%` }}
+            style={{ height: `${second.down}%` }}
           />
         ) : null}
 
         <div
-          className="koo-slider-long"
+          className="koo-slider-long-vertical"
           onMouseUp={(e) => {
             if (range) {
               dealRange(e)
@@ -204,11 +203,11 @@ const NormalSlider = (Props: SliderProps) => {
               handleMouseMove(e)
             }
           }}
-          style={{ width: `${left - second.left}%`, left: `${second.left}%` }}
+          style={{ height: `${down - second.down}%`, top: `${second.down}%` }}
         />
       </div>
       <div
-        className="koo-slider-short-right"
+        className="koo-slider-short-bottom"
         onMouseUp={(e) => {
           HandleMouse(e)
         }}
@@ -220,33 +219,47 @@ const NormalSlider = (Props: SliderProps) => {
             handleMouseMove(e)
           }
         }}
-        style={{ left: `${left}%`, width: `${100 - left}%` }}
+        style={{ top: `${down}%`, height: `${100 - down}%` }}
       />
 
       {range ? (
         <span
-          className="koo-slider-block"
+          className="koo-slider-block-vertical"
           onMouseOver={() => {
             setShowTextRange(true)
           }}
           onMouseOut={() => {
             setShowTextRange(false)
           }}
-          style={{ left: `calc(${second.left}% - 10px)` }}
+          onMouseMove={(e) => {
+            if (range && select && second.select) {
+              dealRange(e)
+            } else if (select) {
+              handleMouseMove(e)
+            }
+          }}
+          style={{ top: `calc(${second.down}% - 10px)` }}
         />
       ) : null}
 
       <span
-        className="koo-slider-block"
+        className="koo-slider-block-vertical"
         onMouseOver={() => {
           setShowText(true)
         }}
         onMouseOut={() => {
           setShowText(false)
         }}
-        style={{ left: `calc(${left}% - 10px)` }}
+        onMouseMove={(e) => {
+          if (range && select && second.select) {
+            dealRange(e)
+          } else if (select) {
+            handleMouseMove(e)
+          }
+        }}
+        style={{ top: `calc(${down}% - 10px)` }}
       />
     </div>
   )
 }
-export default NormalSlider
+export default SliderVertical
