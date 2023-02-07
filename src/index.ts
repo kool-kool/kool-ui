@@ -5,19 +5,26 @@ export type { BreadcrumbProps } from './breadcrumb'
 export { Button } from './button'
 export { default as Carousel } from './carouselMap'
 export {
+  ArrowDownIcon,
   ArrowLeftIcon,
   ArrowRightIcon,
+  ArrowUpIcon,
+  CheckIcon,
+  CloseIcon,
+  ExclamationIcon,
   HomeIcon,
   IconWrapper,
   ListIcon,
   MoreHorizIcon,
   RoundKeyboardArrowRightIcon
 } from './icon'
+export { Input } from './input'
 export { default as Layout } from './layout'
 export { Link, underlineClassName } from './link'
 export type { LinkProps, Underline } from './link'
 export { Scrollbar } from './scrollbar'
 export type { ScrollbarProps } from './scrollbar'
+export { Option, Select } from './select'
 export { childrenToArray } from './shared'
 export { default as Slider } from './slider/index'
 export { default as Space } from './space'
