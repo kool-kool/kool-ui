@@ -17,6 +17,8 @@
     "prepare": "husky install",
     "preview:site": "npm run build:site && serve doc-site",
     "release": "standard-version",
+    "stylelint": "stylelint **/*.scss",
+    "stylelint:fix": "stylelint **/*.scss --fix",
     "test": " jest"
   },
   "lint-staged": {
