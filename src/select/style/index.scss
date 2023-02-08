@@ -1,6 +1,7 @@
 .koo-select {
   list-style: none;
-  //-webkit-box-shadow: 3px 3px 10px #888888;
+
+  // -webkit-box-shadow: 3px 3px 10px #888888;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
   margin: 0;
   position: relative;
@@ -24,7 +25,7 @@
     border: var(--koo-blue-4) 1px solid;
   }
 
-  &:after {
+  &::after {
     content: '>';
     padding: 0 4px;
     transform: rotate(90deg);
@@ -51,15 +52,16 @@
   cursor: pointer;
 
   &:hover {
-    //border: var(--koo-blue-4) 1px solid;
+    // border: var(--koo-blue-4) 1px solid;
     background-color: var(--koo-gray-4);
   }
 }
 
 .is-disabled {
   color: var(--koo-gray-5);
+
   &:hover {
-    //border: var(--koo-red-base) 1px solid;
+    // border: var(--koo-red-base) 1px solid;
     cursor: not-allowed;
   }
 }

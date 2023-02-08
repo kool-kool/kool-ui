@@ -20,7 +20,8 @@ module.exports = {
     'function-url-quotes': null,
     'no-missing-end-of-source-newline': true,
     'no-descending-specificity': null,
-    'font-family-no-missing-generic-family-keyword': null
+    'font-family-no-missing-generic-family-keyword': null,
+    'selector-no-vendor-prefix': null
   },
   overrides: [
     // 若项目中存在scss文件，添加以下配置
