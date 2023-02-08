@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../button'
+import Button from '../button/Button'
 import { MoreHorizIcon } from '../icon'
 import toArray from '../shared/utils/childrenToArray'
 

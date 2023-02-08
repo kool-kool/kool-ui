@@ -1,0 +1,265 @@
+@import './animation';
+@import './helper';
+
+.koo-carousel {
+  position: relative;
+
+  &-dots-position-outer {
+    margin-bottom: 16px;
+  }
+
+  &-slide,
+  &-card,
+  &-fade {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+
+    > * {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+  }
+
+  &-item-current {
+    z-index: 1;
+    position: relative;
+  }
+
+  &-slide {
+    > *:not(.koo-carousel-item-current) {
+      visibility: hidden;
+    }
+
+    // .koo-carousel-item-slide-out {
+    // }
+
+    &.koo-carousel-horizontal {
+      @include animation-item(x);
+    }
+
+    &.koo-carousel-vertical {
+      @include animation-item(y);
+    }
+  }
+
+  &-fade {
+    > * {
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+    }
+
+    .koo-carousel-item-current {
+      opacity: 1;
+    }
+  }
+
+  &-dots {
+    display: flex;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+
+    &-wrapper {
+      position: absolute;
+      z-index: 2;
+
+      &-top {
+        left: 0;
+        right: 0;
+        top: 0;
+        height: $dots-wrapper-height;
+        background: linear-gradient(
+          180deg,
+          $dots-color-back 0%,
+          rgba(0, 0, 0, 0) 87%
+        );
+      }
+
+      &-bottom {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: $dots-wrapper-height;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 13%,
+          $dots-color-back 100%
+        );
+
+        // background-color: azure;
+      }
+
+      &-left {
+        left: 0;
+        top: 0;
+        width: $dots-wrapper-height;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          $dots-color-back 0%,
+          rgba(0, 0, 0, 0%) 87%
+        );
+      }
+
+      &-right {
+        left: 0;
+        top: 0;
+        width: $dots-wrapper-height;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0%) 13%,
+          $dots-color-back 100%
+        );
+      }
+
+      &-outer {
+        left: 0;
+        right: 0;
+        background: none;
+      }
+    }
+
+    &-bottom {
+      bottom: $dots-position;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &-top {
+      top: $dots-position;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &-left {
+      left: $dots-position;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    &-right {
+      right: $dots-color-back;
+      top: 50%;
+      transform: translate(50%, -50%) rotate(90deg);
+    }
+
+    &-outer {
+      left: 50%;
+      transform: translateX(-50%);
+      padding: $dots-outer-padding;
+      border-radius: $dots-outer-border-radius;
+      background-color: transparent;
+
+      &.koo-carousel-dots-dot {
+        bottom: -($dots-position + $dot-size + $dots-outer-padding);
+      }
+    }
+
+    &-item {
+      display: inline-block;
+      border-radius: $dots-outer-border-radius;
+      background-color: $dots-color;
+      cursor: pointer;
+
+      &:hover,
+      &-active {
+        background-color: $dots-color-active;
+      }
+    }
+
+    &-dot {
+      .koo-carousel-dots-item {
+        width: $dot-size;
+        aspect-ratio: 1;
+        border-radius: 50%;
+
+        &:not(:last-child) {
+          margin-right: $dots-gap;
+        }
+      }
+    }
+
+    &-line {
+      .koo-carousel-dots-item {
+        width: $line-width;
+        height: $line-height;
+
+        &:not(:last-child) {
+          margin-right: $line-gap;
+        }
+      }
+    }
+  }
+
+  &-arrow {
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: $arrow-size;
+      height: $arrow-size;
+      border-radius: 50%;
+      color: $arrow-color-icon;
+      background-color: $arrow-color-icon-back;
+      cursor: pointer;
+      z-index: 2;
+
+      &:focus-visible {
+        box-shadow: 0 0 0 2px $arrow-color-icon-box-shadow;
+      }
+
+      > svg {
+        color: $arrow-color-icon;
+        font-size: 28px;
+      }
+
+      &:hover {
+        background-color: $arrow-color-icon-back-hover;
+      }
+    }
+
+    &-left {
+      left: $arrow-position;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &-right {
+      right: $arrow-position;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &-top {
+      top: $arrow-position;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &-bottom {
+      bottom: $arrow-position;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &-arrow-hover div {
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    .koo-carousel-arrow-hover div {
+      opacity: 1;
+    }
+  }
+}

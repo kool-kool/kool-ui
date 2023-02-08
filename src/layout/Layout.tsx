@@ -22,6 +22,7 @@ interface BasicPropsWithTag extends BasicLayoutProps {
 
 // helper function
 function generator({ tagName, displayName, suffixClassnames }: GeneratorProps) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return (BasicComponent: any) => {
     const Adapter = React.forwardRef<HTMLElement, BasicLayoutProps>(
       (props, ref) => {
