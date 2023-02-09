@@ -1,0 +1,170 @@
+$types: 'info', 'success', 'warning', 'error';
+
+.koo-alert {
+  box-sizing: border-box;
+  border-radius: 1px;
+  padding: 8px 24px;
+  font-size: 14px;
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  text-align: left;
+  align-items: center;
+  line-height: 1.5;
+
+  &-with-title {
+    padding: 24px;
+    align-items: flex-start;
+  }
+
+  &-info {
+    border: 1px solid transparent;
+    background-color: var(--koo-blue-3);
+  }
+
+  &-success {
+    border: 1px solid transparent;
+    background-color: var(--koo-green-3);
+  }
+
+  &-warning {
+    border: 1px solid transparent;
+    background-color: var(--koo-gold-3);
+  }
+
+  &-error {
+    border: 1px solid transparent;
+    background-color: var(--koo-red-3);
+  }
+
+  &-banner {
+    border: none;
+    border-radius: 0;
+  }
+
+  &-content-wrapper {
+    position: relative;
+    flex: 1;
+  }
+
+  &-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    line-height: 16px;
+  }
+
+  @each $type in $types {
+    &-#{$type} &-title {
+      color: var(--koo-gray-13);
+    }
+
+    &-#{$type} &-content {
+      color: var(--koo-gray-13);
+    }
+
+    &-#{$type} &-with-title &-content {
+      color: var(--koo-gray-11);
+    }
+  }
+
+  &-icon-wrapper {
+    margin-right: 8px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    svg {
+      font-size: 16px;
+    }
+  }
+
+  &-with-title &-icon-wrapper {
+    height: 24px;
+
+    svg {
+      font-size: 16px;
+    }
+  }
+
+  &-info &-icon-wrapper svg {
+    color: var(--koo-blue-6);
+    fill: var(--koo-blue-6);
+  }
+
+  &-success &-icon-wrapper svg {
+    color: var(--koo-green-6);
+    fill: var(--koo-green-6);
+  }
+
+  &-warning &-icon-wrapper svg {
+    color: var(--koo-gold-6);
+    fill: var(--koo-gold-6);
+  }
+
+  &-error &-icon-wrapper svg {
+    color: var(--koo-red-6);
+    fill: var(--koo-red-6);
+  }
+
+  &-close-button {
+    box-sizing: border-box;
+    padding: 0;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: fade-in($color: #fff, $amount: 0.7);
+    background: transparent;
+    cursor: pointer;
+    transition: color 0.3s cubic-bezier(0, 0, 1, 1);
+    margin-left: 8px;
+    top: 4px;
+    right: 0;
+
+    &:hover {
+      color: fade-in($color: #fff, $amount: 0.9);
+    }
+  }
+
+  &-action + &-close-button {
+    margin-left: 8px;
+  }
+
+  &-action {
+    margin-left: 8px;
+  }
+
+  &-with-title &-close-button {
+    margin-top: 0;
+    margin-right: 0;
+  }
+}
+
+.kooAlertMotion-enter,
+.kooAlertMotion-appear {
+  opacity: 0;
+  transform-origin: 0% 0%;
+  transform: scaleY(0.8) translateZ(0);
+}
+
+.kooAlertMotion-enter-active,
+.kooAlertMotion-appear-active {
+  opacity: 1;
+  transform-origin: 0% 0%;
+  transform: scaleY(1) translateZ(0);
+  transition: transform 0.3s cubic-bezier(0.3, 1.3, 0.3, 1),
+    opacity 0.3s cubic-bezier(0.3, 1.3, 0.3, 1);
+}
+
+.kooAlertMotion-exit {
+  opacity: 1;
+  transform-origin: 0% 0%;
+  transform: scaleY(1) translateZ(0);
+}
+
+.kooAlertMotion-exit-active {
+  opacity: 0;
+  transform-origin: 0% 0%;
+  transform: scaleY(0.8) translateZ(0) cubic-bezier(0.3, 1.3, 0.3, 1);
+  transition: transform 0.3s, opacity 0.3s cubic-bezier(0.3, 1.3, 0.3, 1);
+}

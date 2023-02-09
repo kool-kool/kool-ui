@@ -1,5 +1,6 @@
 import './style/index.scss'
 
+export { default as Alert } from './alert'
 export { Breadcrumbs, BreadcrumbsSeparator } from './breadcrumb'
 export type { BreadcrumbProps } from './breadcrumb'
 export { default as Button } from './button'
@@ -14,6 +15,7 @@ export {
   ExclamationIcon,
   HomeIcon,
   IconWrapper,
+  InfoIcon,
   ListIcon,
   MoreHorizIcon,
   RoundKeyboardArrowRightIcon
