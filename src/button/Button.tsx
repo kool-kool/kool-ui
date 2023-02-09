@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { LoadingIcon } from 'kool-ui/icon'
 import React, { ButtonHTMLAttributes, ReactNode } from 'react'
 // import { ButtonProps } from '../shared/types/utils'
 
@@ -6,7 +7,7 @@ export interface ButtonProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'> {
   children?: ReactNode
   classname?: string // 新加入的className
-  size?: 'large' | 'small' | 'middle'
+  size: 'large' | 'small' | 'middle'
   type?: 'link' | 'primary' | 'dashed' | 'text' | 'default' | 'ghost'
   target?: string
   loading?: boolean
@@ -27,6 +28,7 @@ const Button = (Props: ButtonProps) => {
     loading,
     disabled,
     classname,
+    icon,
     danger,
     shape,
     href,
@@ -35,6 +37,19 @@ const Button = (Props: ButtonProps) => {
     onClick,
     ...reset
   } = Props
+
+  function IconStyle(size: string) {
+    switch (size) {
+      case 'small':
+        return { fontSize: '0.75rem' }
+      case 'large':
+        return { fontsize: '1.5rem' }
+      case 'middle':
+        return { fontsize: '0.875rem' }
+      default:
+        return {}
+    }
+  }
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (disabled || loading) {
       return
@@ -51,6 +66,9 @@ const Button = (Props: ButtonProps) => {
     loading: loading,
     type: HtmlType
   })
+  const iconClasses = classNames('koo-button-icon', {
+    [`koo-btn-icon-${size}`]: size
+  })
   if (href && !loading && !disabled) {
     return (
       <a href={href} target={target}>
@@ -60,7 +78,8 @@ const Button = (Props: ButtonProps) => {
           disabled={disabled}
           {...reset}
         >
-          {children}
+          {loading ? <LoadingIcon className={iconClasses} /> : icon}
+          <span> {children}</span>
         </button>
       </a>
     )
@@ -72,7 +91,8 @@ const Button = (Props: ButtonProps) => {
         disabled={disabled}
         {...reset}
       >
-        {children}
+        {loading ? <LoadingIcon style={IconStyle(size)} /> : icon}
+        <span> {children}</span>
       </button>
     )
   }

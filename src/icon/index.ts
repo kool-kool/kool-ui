@@ -10,6 +10,7 @@ import { ReactComponent as Close } from './svg/Close.svg'
 import { ReactComponent as Exclamation } from './svg/Exclamation.svg'
 import { ReactComponent as Home } from './svg/Home.svg'
 import { ReactComponent as List } from './svg/List.svg'
+import { ReactComponent as Loading } from './svg/Loading.svg'
 import { ReactComponent as MoreHoriz } from './svg/MoreHoriz.svg'
 import { ReactComponent as RoundKeyboardArrowRight } from './svg/RoundKeyboardArrowRight.svg'
 
@@ -24,3 +25,4 @@ export const ArrowUpIcon = IconWrapper(ArrowUp)
 export const CheckIcon = IconWrapper(Check)
 export const CloseIcon = IconWrapper(Close)
 export const ExclamationIcon = IconWrapper(Exclamation)
+export const LoadingIcon = IconWrapper(Loading)

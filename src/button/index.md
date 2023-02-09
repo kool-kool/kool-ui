@@ -33,3 +33,4 @@ toc: content
 <code src="./demo/SizeButton.tsx">不同大小</code>
 <code src="./demo/ShapeButton.tsx">不同形状</code>
 <code src="./demo/DisableButton.tsx">禁用类型</code>
+<code src="./demo/LoadingButton.tsx">loading</code>
