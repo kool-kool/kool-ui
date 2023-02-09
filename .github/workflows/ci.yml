@@ -38,9 +38,11 @@ jobs:
         run: yarn install
       # 运行代码扫描
       - name: Running Lint
-        # 通过前面章节定义的命令行执行代码扫描
+        # 执行命令
         run: yarn lint
+      # 运行样式扫描
+      - name: Running Stylelint
+        run: yarn stylelint
       # 运行自动化测试
       - name: Running Test
-        # 通过前面章节定义的命令行执行自动化测试
         run: yarn test
