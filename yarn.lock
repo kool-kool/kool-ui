@@ -13624,6 +13624,11 @@ stylelint-config-standard@^29.0.0:
   dependencies:
     stylelint-config-recommended "^9.0.0"
 
+stylelint-max-lines@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.npmmirror.com/stylelint-max-lines/-/stylelint-max-lines-0.1.0.tgz#14ad76acb86081cb199a567aa468fc4fd011c0d9"
+  integrity sha512-xp9fHJocQyGtA/eEzGi2qZfQwJiPkHNFMd/FTyg/ivWIN+GA3bFSePZjHtGY82qq6Dilsvxo4d5+kVM6N4oCkw==
+
 stylelint-scss@^4.0.0, stylelint-scss@^4.3.0:
   version "4.3.0"
   resolved "https://registry.npmjs.org/stylelint-scss/-/stylelint-scss-4.3.0.tgz"

@@ -21,7 +21,8 @@ module.exports = {
   plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
   rules: {
     'prettier/prettier': 'error', // 对于不符合prettier报eslint错误
-    '@typescript-eslint/no-non-null-assertion': 'off'
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    'max-lines': ['error', 300] //限制文件最大行数300
   },
   settings: {
     'import/resolver': {
