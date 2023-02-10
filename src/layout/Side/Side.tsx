@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import { getPrefixCls } from '../../shared'
 
-import { ArrowLeftIcon, ArrowRightIcon, ListIcon } from '../../index'
+import { ArrowLeftIcon, ArrowRightIcon, ListIcon } from '../../icon'
 
 const breakPointMap = {
   xs: '480px',

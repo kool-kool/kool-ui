@@ -116,6 +116,6 @@ describe('test layout', () => {
     expect(aside).toBeInTheDocument()
     expect(aside?.tagName).toEqual('ASIDE')
     fireEvent.click(element)
-    expect(aside?.style['_values']['flex']).toContain('0 0 0px')
+    expect(aside?.style.flex).toContain('0 0 0px')
   })
 })
