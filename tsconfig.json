@@ -1,11 +1,10 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
-    "target": "esnext",
-    "module": "commonjs",
+    "target": "ES6",
+    "module": "ESNext",
     "jsx": "react",
     "declaration": true,
-    "declarationDir": "lib",
     "strict": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
@@ -15,15 +14,9 @@
       "@@/*": [".dumi/tmp/*"],
       "kool-ui": ["src"],
       "kool-ui/*": ["src/*", "*"]
-    }
+    },
+    "lib": ["es2015", "dom"]
   },
-  "lib": ["es2015", "dom"],
-  "include": [
-    "src/**/*",
-    "typings.d.ts",
-    ".dumi/**/*",
-    ".dumirc.ts",
-    "svgr.d.ts"
-  ],
+  "include": ["src/**/*", ".dumi/**/*", ".dumirc.ts", "svgr.d.ts"],
   "exclude": ["node_modules"]
 }
