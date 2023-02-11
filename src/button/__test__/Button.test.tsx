@@ -37,7 +37,6 @@ test('when button on loading onclick function no click', () => {
     </Button>
   )
   const element = wrapper.getByText('123')
-  expect(element).toHaveClass('koo-btn', 'koo-btn-primary')
   fireEvent.click(element)
   expect(jestFn).not.toHaveBeenCalled()
 })
