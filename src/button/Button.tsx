@@ -1,6 +1,6 @@
 import classNames from 'classnames'
-import { LoadingIcon } from 'kool-ui/icon'
 import React, { ButtonHTMLAttributes, ReactNode } from 'react'
+import { LoadingIcon } from '../icon/index'
 // import { ButtonProps } from '../shared/types/utils'
 
 export interface ButtonProps
