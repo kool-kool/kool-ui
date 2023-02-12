@@ -33,3 +33,21 @@ toc: content
 <code src="./demo/SizeButton.tsx">不同大小</code>
 <code src="./demo/ShapeButton.tsx">不同形状</code>
 <code src="./demo/DisableButton.tsx">禁用类型</code>
+<code src="./demo/LoadingButton.tsx">loading</code>
+
+## API
+
+### props
+
+| 参数     | 类型                                             | 默认值    | 描述                                                  |
+| :------- | :----------------------------------------------- | :-------- | :---------------------------------------------------- |
+| size     | 'small' \'middle' \ 'large'                      | ‘middle’  | 按钮大小                                              |
+| shape    | 'round' \ 'circle' \ ‘default’                   | ‘default’ | 设置按钮形状                                          |
+| loading  | boolean                                          | false     | 设置按钮载入状态                                      |
+| type     | primary \ ghost \ dashed \ link \ text \ default | default   | 设置按钮类型                                          |
+| onClick  | (event: MouseEvent) => void                      | -         | 点击按钮的回调                                        |
+| target   | string                                           | -         | 相当于 a 链接的 target 属性，href 存在时生效          |
+| href     | string                                           | -         | 点击跳转的地址，指定此属性 button 的行为和 a 链接一致 |
+| disabled | boolean                                          | false     | 设置按钮失效状态                                      |
+| danger   | boolean                                          | false     | 设置危险按钮                                          |
+| icon     | ReactNode                                        | -         | 设置按钮的图标组件                                    |
