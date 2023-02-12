@@ -71,7 +71,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
     className
   )
 
-  const ifClose = 'closeable' in props ? closeable : closed
+  const ifClose = 'closed' in props ? closed : closeable
 
   return (
     <CSSTransition
