@@ -3,9 +3,6 @@ import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 import Carousel from '../Carousel'
 
-// const objTranList = (source: DOMTokenList) =>
-//   source.keys()
-
 const imgList = [
   'https://raw.githubusercontent.com/wujinhjun/wujinhjun-pic/main/00.jpg',
   'https://raw.githubusercontent.com/wujinhjun/wujinhjun-pic/main/01.jpg',
