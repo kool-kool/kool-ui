@@ -27,7 +27,7 @@
       transition: 0.4s;
       width: 50px;
 
-      &:before {
+      &::before {
         position: absolute;
         content: '';
         height: 16px;
@@ -44,7 +44,7 @@
     .switch-text {
       align-items: center;
       position: absolute;
-      top: 0px;
+      top: 0;
       right: 7px;
       transition: 0.4s;
     }
@@ -53,7 +53,7 @@
       background-color: #2196f3;
     }
 
-    input:checked + .slider:before {
+    input:checked + .slider::before {
       -webkit-transform: translateX(26px);
       -ms-transform: translateX(26px);
       transform: translateX(26px);
@@ -133,7 +133,7 @@
     transition: 0.4s;
     width: 70px;
 
-    &:before {
+    &::before {
       position: absolute;
       content: '';
       height: 26px;
@@ -199,7 +199,7 @@
     box-shadow: 0 0 1px #2196f3;
   }
 
-  input:checked + .slider:before {
+  input:checked + .slider::before {
     -webkit-transform: translateX(35px);
     -ms-transform: translateX(35px);
     transform: translateX(35px);
@@ -235,6 +235,7 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -244,6 +245,7 @@
   from {
     transform: rotate(0);
   }
+
   to {
     transform: rotate(360deg);
   }
