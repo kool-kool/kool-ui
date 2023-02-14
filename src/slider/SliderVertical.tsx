@@ -33,16 +33,8 @@ const SliderVertical = (Props: SliderVerticalProps) => {
   } = Props
   const [showText, setShowText] = useState<boolean>(false)
   const [showTextRange, setShowTextRange] = useState<boolean>(false)
-  const {
-    HandleMouse,
-    handleMouseMove,
-    containerRef,
-    // left,
-    // setLeft,
-    select,
-    down,
-    setDown
-  } = UseSlider(typeof disable === 'boolean' ? disable : false, step, max - min)
+  const { HandleMouse, handleMouseMove, containerRef, select, down, setDown } =
+    UseSlider(typeof disable === 'boolean' ? disable : false, step, max - min)
   const second = UseSlider(typeof disable === 'boolean' ? disable : false)
   function dealRange(e: React.MouseEvent<HTMLDivElement | HTMLSpanElement>) {
     const Y = e.clientY

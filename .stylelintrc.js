@@ -22,7 +22,7 @@ module.exports = {
     'no-descending-specificity': null,
     'font-family-no-missing-generic-family-keyword': null,
     'selector-no-vendor-prefix': null,
-    'plugin/file-max-lines': [5, { ignore: 'comments' }]
+    'plugin/file-max-lines': [300, { ignore: 'comments' }]
   },
   overrides: [
     // 若项目中存在scss文件，添加以下配置

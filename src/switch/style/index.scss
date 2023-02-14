@@ -1,81 +1,243 @@
-input[type='checkbox'] {
-  height: 0;
-  width: 0;
-  visibility: hidden;
+.switch {
+  position: relative;
+  display: inline-block;
+  height: 34px;
+  width: 70px;
 
-  &:checked + .koo-switch {
-    background: var(--koo-main-color);
-    transition: background-color 300ms linear;
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
 
-    &.koo-switch-loading {
-      & div {
-        left: calc(100% - 19px);
-        border-top-color: var(--koo-color-4);
+  &.switch-small {
+    width: 50px;
+    height: 24px;
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      border-radius: 34px;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      width: 50px;
+
+      &::before {
+        position: absolute;
+        content: '';
+        height: 16px;
+        width: 16px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        border-radius: 50%;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
       }
+    }
+
+    .switch-text {
+      align-items: center;
+      position: absolute;
+      top: 0;
+      right: 7px;
+      transition: 0.4s;
+    }
+
+    input:checked + .slider {
+      background-color: #2196f3;
+    }
+
+    input:checked + .slider::before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    input:checked + .slider + .switch-text {
+      -webkit-transform: translateX(-20px);
+      -ms-transform: translateX(-20px);
+      transform: translateX(-20px);
+    }
+
+    &.switch-loading {
+      .slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        border-radius: 34px;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        width: 50px;
+        cursor: not-allowed;
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        border-radius: 50%;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        z-index: 0;
+      }
+
+      & div {
+        border-radius: 100px;
+        height: 10px;
+        width: 10px;
+        z-index: 999;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        border: 2px solid transparent;
+        border-top-color: #d9d9d9;
+        animation: loading 0.8s linear infinite;
+      }
+    }
+
+    input:checked + .slider + .loading {
+      left: calc(100% - 19px);
+      border-top-color: #2196f3;
+    }
+
+    input:checked + .slider + .loading + .switch-text {
+      -webkit-transform: translateX(-20px);
+      -ms-transform: translateX(-20px);
+      transform: translateX(-20px);
     }
   }
 
-  &:checked + .koo-switch::after {
-    left: calc(100% - 2px);
-    transform: translateX(-100%);
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    width: 70px;
+
+    &::before {
+      position: absolute;
+      content: '';
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      border-radius: 50%;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      z-index: 0;
+    }
   }
 
-  &:checked + .koo-switch-disabled {
-    background: var(--koo-blue-3);
-    transition: background-color 300ms linear;
+  &.switch-loading {
+    .slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      border-radius: 34px;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      width: 70px;
+      cursor: not-allowed;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      border-radius: 50%;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      z-index: 0;
+    }
+
+    & div {
+      border-radius: 100px;
+      height: 20px;
+      width: 20px;
+      z-index: 999;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      border: 2px solid transparent;
+      border-top-color: #d9d9d9;
+      animation: loading 0.8s linear infinite;
+    }
+  }
+
+  input:checked + .slider {
+    background-color: #2196f3;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+  }
+
+  input:checked + .slider::before {
+    -webkit-transform: translateX(35px);
+    -ms-transform: translateX(35px);
+    transform: translateX(35px);
+  }
+
+  .switch-text {
+    align-items: center;
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    transition: 0.4s;
+  }
+
+  input:checked + .slider + .switch-text {
+    -webkit-transform: translateX(-25px);
+    -ms-transform: translateX(-25px);
+    transform: translateX(-25px);
+  }
+
+  input:checked + .slider + .loading + .switch-text {
+    -webkit-transform: translateX(-25px);
+    -ms-transform: translateX(-25px);
+    transform: translateX(-25px);
+  }
+
+  input:checked + .slider + .loading {
+    left: calc(100% - 30px);
+    border-top-color: #2196f3;
   }
 }
 
-.koo-switch {
-  cursor: pointer;
-  width: 44px;
-  height: 22px;
-  background: var(--koo-gray-7);
-  display: block;
-  border-radius: 100px;
-  position: relative;
-  transition: background-color 300ms linear;
-  background-clip: padding-box;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 18px;
-    height: 18px;
-    background: var(--koo-gray-1);
-    border-radius: 90px;
-    transition: 0.3s;
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
 
-  &.koo-switch-small {
-    width: 28px;
-    height: 16px;
-
-    &::after {
-      width: 12px;
-      height: 12px;
-    }
-  }
-
-  &.koo-switch-disabled {
-    background-color: var(--koo-gray-5);
-  }
-
-  &.koo-switch-loading {
-    & div {
-      border-radius: 100px;
-      height: 14px;
-      width: 14px;
-      z-index: 999;
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      border: 1px solid transparent;
-      border-top-color: var(--koo-gray-5);
-      animation: loading 0.8s linear infinite;
-    }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
