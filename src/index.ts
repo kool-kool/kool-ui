@@ -1,6 +1,6 @@
 import './style/index.scss'
 
-export { default as Alert } from './alert'
+export { default as Alert, type AlertProps } from './alert'
 export { Breadcrumbs, BreadcrumbsSeparator } from './breadcrumb'
 export type { BreadcrumbProps } from './breadcrumb'
 export { Button } from './button'
