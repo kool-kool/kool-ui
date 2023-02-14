@@ -25,7 +25,11 @@ export default [
       // 解决svg的引入
       svgr({ exportType: 'named' }),
       // 编译ts
-      typescript(),
+      typescript({
+        tsconfigOverride: {
+          exclude: ['**/__test__', '.dumi/', '**/demo']
+        }
+      }),
       // 处理css
       postcss({
         // 抽离成单独的css文件
@@ -33,7 +37,7 @@ export default [
       })
     ],
     // 剔除依赖
-    external: ['react', 'react-dom', /node_modules/]
+    external: ['react', 'react-dom']
   },
   // 生成类型声明文件
   {

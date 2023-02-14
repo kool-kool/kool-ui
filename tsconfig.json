@@ -17,5 +17,6 @@
     },
     "lib": ["es2015", "dom"]
   },
-  "include": ["src/**/*", ".dumi/**/*", ".dumirc.ts", "svgr.d.ts"]
+  "include": ["src/**/*", ".dumi/**/*", ".dumirc.ts", "svgr.d.ts"],
+  "exclude": ["**/__test__", ".dumi/", "**/demo"]
 }
