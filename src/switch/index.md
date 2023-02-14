@@ -19,3 +19,4 @@ toc: content
 <code src="./demo/disabled.tsx">禁用类型</code>
 <code src="./demo/loading.tsx">加载类型</code>
 <code src="./demo/size.tsx">大小类型</code>
+<code src="./demo/text.tsx">文字类型</code>

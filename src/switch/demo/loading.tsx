@@ -4,8 +4,10 @@ import React from 'react'
 const App: React.FC = () => {
   return (
     <div>
-      <Switch loading checked />
       <Switch loading />
+      <span style={{ marginLeft: '20px' }}>
+        <Switch loading checked />
+      </span>
     </div>
   )
 }

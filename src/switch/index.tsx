@@ -1,127 +1,75 @@
-import classNames from 'classnames'
-import PropTypes from 'prop-types'
-import React, { ReactNode } from 'react'
+import React, { FC, Fragment, ReactNode } from 'react'
 import './style/index.scss'
 
-export type SwitchChangeEventHandler = (
-  checked: boolean,
-  event: React.MouseEvent<HTMLButtonElement>
-) => void
-export type SwitchClickEventHandler = SwitchChangeEventHandler
-
-export interface SwitchProps {
+interface SwitchProps {
+  defaultChecked?: boolean
   checked?: boolean
-  // defaultChecked?: boolean;
-  disabled?: boolean
   size?: 'default' | 'small'
-  loading?: boolean
   className?: string
-  children?: ReactNode
+  onChange?: (checked: boolean) => void
+  onClick?: (event: React.MouseEvent<HTMLLabelElement>) => void
+  disabled?: boolean
   autoFocus?: boolean
-  onChange?: SwitchChangeEventHandler
-  onClick?: SwitchClickEventHandler
+  loading?: boolean
+  children?: ReactNode
+  checkedChildren?: ReactNode
+  unCheckedChildren?: ReactNode
 }
 
-const Switch: React.FC<SwitchProps> = (props: SwitchProps) => {
-  const {
-    autoFocus,
-    checked,
-    // defaultChecked = false,
-    disabled,
-    className,
-    size,
-    loading,
-    children,
-    onChange,
-    onClick
-  } = props
-  const classes = classNames(
-    'koo-switch',
-    {
-      ['koo-switch-small']: size === 'small',
-      ['koo-switch-disabled']: disabled,
-      ['koo-switch-loading']: loading
-    },
-    className
-  )
+const Switch: FC<SwitchProps> = ({
+  defaultChecked = false,
+  checked,
+  onChange,
+  size = 'default',
+  className,
+  onClick,
+  disabled,
+  autoFocus,
+  loading = false,
+  children,
+  checkedChildren,
+  unCheckedChildren
+}) => {
+  const [isChecked, setIsChecked] = React.useState(defaultChecked)
 
-  function handleClick(
-    e: any & {
-      target: HTMLInputElement
+  React.useEffect(() => {
+    if (checked !== undefined) {
+      setIsChecked(checked)
     }
-  ) {
-    if (onClick) {
-      onClick(e.target.checked, e)
-    }
+  }, [checked])
 
-    return
-  }
-
-  function handleChange(
-    e: any & {
-      target: HTMLInputElement
+  const handleChange = () => {
+    if (checked === undefined) {
+      setIsChecked((c: boolean) => !c)
+      onChange && onChange(!isChecked)
     }
-  ) {
-    if (onChange) {
-      onChange(e.target.checked, e)
-    }
-
-    return
   }
 
   return (
-    <div>
-      <input
-        type="checkbox"
-        id="switch"
-        checked={checked}
-        // defaultChecked={defaultChecked}
-        autoFocus={autoFocus}
-        disabled={disabled || loading}
-        onClick={(e) => handleClick(e)}
-        onChange={(e) => handleChange(e)}
-      />
-      <label htmlFor="switch" className={classes}>
-        <div></div>
-      </label>
-      {children}
-    </div>
+    <label
+      className={`switch switch-${size} ${className} ${
+        loading ? 'switch-loading' : ''
+      }`}
+      onClick={onClick}
+    >
+      <Fragment>
+        <input
+          type="checkbox"
+          checked={isChecked}
+          onChange={handleChange}
+          disabled={disabled || loading}
+          autoFocus={autoFocus}
+        />
+        <span className="slider"></span>
+        {loading ? <div className="loading"></div> : null}
+        <span className="switch-text">
+          {(checked !== undefined ? checked : isChecked)
+            ? checkedChildren || children
+            : unCheckedChildren || children}
+        </span>
+      </Fragment>
+    </label>
   )
-}
-
-Switch.propTypes = {
-  /**
-   * 开启状态的內容。若设置，则由外部参数控制；若不设置，则由內部 state 控制
-   */
-  checked: PropTypes.bool,
-  /**
-   * 禁用状态
-   */
-  disabled: PropTypes.bool,
-  /**
-   * callback function
-   */
-  onChange: PropTypes.func,
-  /**
-   * 开关大小
-   */
-  size: PropTypes.oneOf(['default', 'small']),
-  /**
-   * 开关初识时是否默认选择
-   */
-  // defaultChecked: PropTypes.bool,
-  /**
-   * Classnames
-   */
-  className: PropTypes.string,
-  /**
-   * 是否为加载状态
-   */
-  loading: PropTypes.bool
-}
-
-Switch.defaultProps = {
-  size: 'default'
 }
 
 export default Switch
