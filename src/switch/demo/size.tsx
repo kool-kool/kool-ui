@@ -1,14 +1,13 @@
 import { Switch } from 'kool-ui'
 import React from 'react'
-
-const onChange = (checked: boolean) => {
-  console.log(`switch to ${checked}`)
-}
+import './index.scss'
 
 const App: React.FC = () => {
   return (
-    <div>
-      <Switch size={'small'} />
+    <div className={'switchSize'}>
+      <span style={{ marginRight: '20px' }}>
+        <Switch size={'small'} />
+      </span>
       <Switch />
     </div>
   )
