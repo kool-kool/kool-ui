@@ -13,6 +13,8 @@ import { ReactComponent as Info } from './svg/Info.svg'
 import { ReactComponent as List } from './svg/List.svg'
 import { ReactComponent as Loading } from './svg/Loading.svg'
 import { ReactComponent as MoreHoriz } from './svg/MoreHoriz.svg'
+import { ReactComponent as ProgressError } from './svg/ProgressError.svg'
+import { ReactComponent as ProgressSuccess } from './svg/ProgressSucccess.svg'
 import { ReactComponent as RoundKeyboardArrowRight } from './svg/RoundKeyboardArrowRight.svg'
 
 export const MoreHorizIcon = IconWrapper(MoreHoriz)
@@ -28,3 +30,5 @@ export const CloseIcon = IconWrapper(Close)
 export const ExclamationIcon = IconWrapper(Exclamation)
 export const InfoIcon = IconWrapper(Info)
 export const LoadingIcon = IconWrapper(Loading)
+export const ErrorIcon = IconWrapper(ProgressError)
+export const SuccessIcon = IconWrapper(ProgressSuccess)

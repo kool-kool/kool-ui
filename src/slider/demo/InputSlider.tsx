@@ -19,8 +19,7 @@ const BasicSlider: React.FC = () => {
       <Input
         value={inputNumber}
         onChange={(e) => {
-          console.log(e.target.value, 'value')
-          setInputNumber(Number(e.target.value))
+          setInputNumber(Number((e.target as HTMLInputElement).value))
         }}
       />
       <Switch

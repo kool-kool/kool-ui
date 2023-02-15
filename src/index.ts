@@ -12,18 +12,21 @@ export {
   ArrowUpIcon,
   CheckIcon,
   CloseIcon,
+  ErrorIcon,
   ExclamationIcon,
   HomeIcon,
   IconWrapper,
   InfoIcon,
   ListIcon,
   MoreHorizIcon,
-  RoundKeyboardArrowRightIcon
+  RoundKeyboardArrowRightIcon,
+  SuccessIcon
 } from './icon'
 export { Input } from './input'
 export { default as Layout } from './layout'
 export { Link, underlineClassName } from './link'
 export type { LinkProps, Underline } from './link'
+export { default as Progress } from './progress'
 export { Scrollbar } from './scrollbar'
 export type { ScrollbarProps } from './scrollbar'
 export { Option, Select } from './select'
