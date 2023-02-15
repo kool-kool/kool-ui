@@ -1,22 +1,39 @@
+import babel from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
 import svgr from '@svgr/rollup'
+import cssnano from 'cssnano'
 import dts from 'rollup-plugin-dts'
 import postcss from 'rollup-plugin-postcss'
+import { terser } from 'rollup-plugin-terser'
 import typescript from 'rollup-plugin-typescript2'
 
 export default [
   {
     // 项目入口
     input: 'src/index.ts',
-    output: {
-      // 输出格式
-      format: 'esm',
-      // 输出目录
-      dir: 'dist',
-      // 保留源文件的代码格式
-      preserveModules: true
-    },
+    output: [
+      {
+        // 输出文件
+        file: 'dist/index.es.js',
+        // 输出格式
+        format: 'esm'
+      },
+      {
+        file: 'dist/index.cjs.js',
+        format: 'cjs'
+      },
+      {
+        file: 'dist/index.umd.js',
+        format: 'umd',
+        // umd 需要指定name
+        name: 'kool-ui',
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM'
+        }
+      }
+    ],
     plugins: [
       // 解决node 包的导入
       resolve(),
@@ -27,14 +44,26 @@ export default [
       // 编译ts
       typescript({
         tsconfigOverride: {
+          // 过滤
           exclude: ['**/__test__', '.dumi/', '**/demo']
         }
+      }),
+      babel({
+        presets: ['@babel/preset-env'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        exclude: '**/node_modules/**'
       }),
       // 处理css
       postcss({
         // 抽离成单独的css文件
-        extract: true
-      })
+        extract: 'index.css',
+        plugins: [
+          // css压缩
+          cssnano()
+        ]
+      }),
+      // 代码压缩
+      terser()
     ],
     // 剔除依赖
     external: ['react', 'react-dom']
