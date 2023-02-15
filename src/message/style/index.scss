@@ -25,7 +25,7 @@ $prefix-cls: 'koo-message';
   justify-content: center;
   margin-top: 20px;
   box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014,
-  0 9px 28px 8px #0000000d;
+    0 9px 28px 8px #0000000d;
   min-width: 300px;
   min-height: 52px;
   box-sizing: border-box;
@@ -69,7 +69,6 @@ $prefix-cls: 'koo-message';
       animation: slideIn 0.5s;
     }
   }
-
 }
 
 @keyframes top-in {
