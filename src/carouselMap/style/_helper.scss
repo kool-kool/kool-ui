@@ -1,0 +1,47 @@
+@mixin animation-generator($dire, $entry) {
+  animation: koo-carousel-slide-#{$dire}-#{$entry};
+}
+
+@mixin animation-item($direction) {
+  .koo-carousel-item-slide-out {
+    display: block;
+    @include animation-generator($direction, 'out');
+  }
+
+  .koo-carousel-item-slide-in {
+    display: block;
+    @include animation-generator($direction, 'in');
+  }
+
+  &.koo-carousel-negative {
+    .koo-carousel-item-slide-out {
+      @include animation-generator($direction, 'out-reverse');
+    }
+
+    .koo-carousel-item-slide-in {
+      @include animation-generator($direction, 'in-reverse');
+    }
+  }
+}
+
+$dots-color-back: rgba(0, 0, 0, 0.15);
+$dots-color: rgba(255, 255, 255, 0.3);
+$dots-color-active: var(--koo-gray-1);
+$dots-wrapper-height: 48px;
+$dots-position: 16px;
+$dots-gap: 16px;
+$dots-border-radius: 4px;
+$dot-size: 8px;
+$line-gap: $dots-gap;
+$line-width: 16px;
+$line-height: 4px;
+$slider-width: 48px;
+$slider-height: $line-height;
+$dots-outer-padding: 8px;
+$dots-outer-border-radius: 20px;
+$arrow-size: 32px;
+$arrow-color-icon: var(--koo-gray-1);
+$arrow-color-icon-back: rgba(255, 255, 255, 0.3);
+$arrow-color-icon-back-hover: rgba(255, 255, 255, 0.5);
+$arrow-color-icon-box-shadow: var(--koo-gray-6);
+$arrow-position: 24px;
