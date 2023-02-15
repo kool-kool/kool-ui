@@ -13,7 +13,7 @@
     border: var(--koo-blue-4) 1px solid;
   }
 
-  &::-webkit-input-placeholder {
+  &::placeholder {
     color: var(--koo-gray-6);
   }
 }
