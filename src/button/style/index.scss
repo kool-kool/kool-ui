@@ -1,7 +1,9 @@
 .koo-btn {
   position: relative;
-  display: inline-block;
+  display: flex;
+  gap: 0.25rem;
   text-align: center;
+  align-items: center;
   vertical-align: middle;
   background-color: transparent;
   background-image: none;
@@ -196,37 +198,6 @@
   }
 }
 
-.loading::before {
-  display: inline-block;
-  content: '';
-  height: 10px;
-  width: 10px;
-  border-left: solid 1px white;
-  border-radius: 70%;
-  animation: loading 0.75s ease infinite;
-}
-@keyframes loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  25% {
-    transform: rotate(90deg);
-  }
-
-  50% {
-    transform: rotate(180deg);
-  }
-
-  75% {
-    transform: rotate(270deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .koo-btn-large {
   font-size: var(--koo-font-xl);
   padding: 0.5rem 1rem;
@@ -255,4 +226,8 @@
 
 .koo-btn-shape-round {
   border-radius: 1rem;
+}
+
+.koo-btn-icon-small {
+  font-size: 0.2rem;
 }
