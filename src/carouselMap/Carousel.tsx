@@ -22,7 +22,7 @@ function CarouselComponent(props: CarouselProps, ref: any) {
     animation = 'slide',
     trigger = 'click',
     direction = 'horizontal',
-    switchSeed = '500',
+    switchSpeed = '500',
     timingFunc = 'cubic-bezier(0.34, 0.69, 0.1, 1)',
     dotsType = 'dot',
     dotsPosition = 'bottom',
@@ -145,7 +145,7 @@ function CarouselComponent(props: CarouselProps, ref: any) {
       refAnimationTimer.current = setTimeout(() => {
         setIsAnimating(false)
         refAnimationTimer.current = null
-      }, switchSeed as number)
+      }, switchSpeed as number)
     }
   }
 
@@ -211,9 +211,9 @@ function CarouselComponent(props: CarouselProps, ref: any) {
             style: Object.assign(
               {
                 transitionTimingFunction: timingFunc,
-                transitionDuration: `${switchSeed}ms`,
+                transitionDuration: `${switchSpeed}ms`,
                 animationTimingFunction: timingFunc,
-                animationDuration: `${switchSeed}ms`
+                animationDuration: `${switchSpeed}ms`
               },
               childStyle
             ),
