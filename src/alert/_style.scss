@@ -70,7 +70,7 @@ $types: 'info', 'success', 'warning', 'error';
 
   &-icon-wrapper {
     margin-right: 8px;
-    line-height: 24px;
+    line-height: 16px;
     display: flex;
     align-items: center;
 
@@ -80,7 +80,7 @@ $types: 'info', 'success', 'warning', 'error';
   }
 
   &-with-title &-icon-wrapper {
-    height: 24px;
+    height: 16px;
 
     svg {
       font-size: 16px;
@@ -99,12 +99,14 @@ $types: 'info', 'success', 'warning', 'error';
 
   &-warning &-icon-wrapper svg {
     color: var(--koo-gold-6);
-    fill: var(--koo-gold-6);
+    fill: var(--koo-gold-3);
+    stroke: var(--koo-gold-6);
   }
 
   &-error &-icon-wrapper svg {
     color: var(--koo-red-6);
-    fill: var(--koo-red-6);
+    fill: var(--koo-red-3);
+    stroke: var(--koo-failed-color);
   }
 
   &-close-button {

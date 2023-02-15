@@ -1,0 +1,96 @@
+$prefix-cls: 'koo-message';
+
+#toast-root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  margin-top: 60px;
+
+  .toast-child {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.#{$prefix-cls} {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014,
+    0 9px 28px 8px #0000000d;
+  min-width: 300px;
+  min-height: 52px;
+  box-sizing: border-box;
+  padding: 16px 20px;
+  border-radius: 4px;
+  background: #fff;
+
+  & > *:first-child {
+    margin-right: 12px;
+
+    // topout 根据判断改变样式
+    animation: top-in 200ms ease-in-out forwards;
+  }
+
+  transition: all 0.3s;
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // 正常提示
+    &.info {
+      animation: slideIn 0.3s linear;
+    }
+
+    // 成功提示
+    &.success {
+      animation: slideIn 0.3s;
+    }
+
+    // 警告提示
+    &.warn {
+      animation: slideIn 0.3s;
+    }
+
+    // 错误提示
+    &.error {
+      animation: slideIn 0.5s;
+    }
+  }
+}
+
+@keyframes top-in {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+}
+
+@keyframes top-out {
+  0% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+}
