@@ -19,6 +19,8 @@ export {
   InfoIcon,
   ListIcon,
   MoreHorizIcon,
+  ProgressErrorIcon,
+  ProgressSuccessIcon,
   RoundKeyboardArrowRightIcon,
   SuccessIcon
 } from './icon'

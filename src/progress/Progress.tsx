@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import React from 'react'
-import { ErrorIcon, SuccessIcon } from '../icon'
+import { ProgressErrorIcon, ProgressSuccessIcon } from '../icon'
 
 interface ProcessProps {
   width?: number
@@ -14,9 +14,9 @@ const Progress = (Props: ProcessProps) => {
 
   function dealText(S: string | undefined) {
     if (S === 'success') {
-      return <SuccessIcon style={{ fontSize: '0.75rem' }} />
+      return <ProgressSuccessIcon style={{ fontSize: '0.75rem' }} />
     } else if (S === 'error') {
-      return <ErrorIcon style={{ fontSize: '0.75rem' }} />
+      return <ProgressErrorIcon style={{ fontSize: '0.75rem' }} />
     } else {
       return <div>{percent}%</div>
     }
