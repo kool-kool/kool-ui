@@ -45,20 +45,20 @@ title: Carousel 轮播图
 ## API
 
 |      参数      | 类型                                                       |                                 描述                                  | 默认值                           |
-| :------------: | ---------------------------------------------------------- | :-------------------------------------------------------------------: | -------------------------------- | ------------ | -------- | ---------- | -------- |
+| :------------: | ---------------------------------------------------------- | :-------------------------------------------------------------------: | -------------------------------- |
 |     style      | CSSProperties                                              |                               行内样式                                | -                                |
 |   className    | string                                                     |                               classname                               | -                                |
 |    autoPlay    | boolean\|{ interval?: number; hoverToPause?: boolean }     | 是否自动播放，或者传入对象`{interval:时间间隔,hoverToPause:悬浮暂停}` | -                                |
 | autoPlaySpeed  | number                                                     |                             自动切换速率                              | 3000                             |
 |  switchSpeed   | number                                                     |                               切换速率                                | 500                              |
-|   animation    | `slide`                                                    |                                `fade`                                 | 切换效果                         | `slide`      |
-|    trigger     | `hover`                                                    |                                `click`                                | 切换触发方式                     | `click`      |
-|   direction    | `horizontal`                                               |                              `vertical`                               | 切换方向                         | `horizontal` |
-|   arrowShow    | `always`                                                   |                                `hover`                                | `never`                          | 按钮呈现方式 | `always` |
+|   animation    | `slide`                                                    |                                `fade`                                 | 切换效果                         |
+|    trigger     | `hover`                                                    |                                `click`                                | 切换触发方式                     |
+|   direction    | `horizontal`                                               |                              `vertical`                               | 切换方向                         |
+|   arrowShow    | `always`                                                   |                                `hover`                                | `never`                          |
 | arrowClassName | string\|String[]                                           |                              按钮的类名                               | -                                |
 |     icons      | {prev?: ReactNode, next?:ReactNode}                        |                              自定义按钮                               | -                                |
-|    dotsType    | `line`                                                     |                                 `dot`                                 | `never`                          | 控制器形状   | `dot`    |
-|  dotsPosition  | `bottom`                                                   |                                 `top`                                 | `left`                           | `right`      | `outer`  | 控制器位置 | `bottom` |
+|    dotsType    | `line`                                                     |                                 `dot`                                 | `never`                          |
+|  dotsPosition  | `bottom`                                                   |                                 `top`                                 | `left`                           |
 | dotsClassName  | string \| string[]                                         |                              控制器类名                               | -                                |
 |   timingFunc   | string                                                     |                             过渡时间曲线                              | cubic-bezier(0.34, 0.69, 0.1, 1) |
 |    onChange    | (index: number, prevIndex: number, isAuto?: boolean)=>void |                           切换时的回调函数                            | -                                |
