@@ -18,7 +18,7 @@ export interface CarouselProps {
   currentIndex?: number
   autoPlay?: boolean | { interval?: number; hoverToPause?: boolean }
   autoPlaySpeed?: number
-  switchSeed?: number
+  switchSpeed?: number
   animation?: 'slide' | 'fade'
   trigger?: 'hover' | 'click'
   direction?: 'horizontal' | 'vertical'
