@@ -18,8 +18,8 @@ toc: content
 
 ### props
 
-| 参数        | 说明             | 类型                            | 默认值 |
-| ----------- | ---------------- | ------------------------------- | ------ |
-| type        | 提示信息种类     | `success` `info` `warn` `error` | 'info' |
-| duration    | 提示信息展示时间 | `number`                        | 3000   |
-| c内容ontent | 选中时的内容     | `string` `element`              | -      |
+| 参数 | 说明             | 类型                            | 默认值 |
+| ---- | ---------------- | ------------------------------- | ----- |
+| type | 提示信息种类     | `success` `info` `warn` `error` | `info` |
+| duration | 提示信息展示时间 | `number`                        | 3000  |
+| 内容 | 选中时的内容     | `string` `element`              | -     |
