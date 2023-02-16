@@ -13,6 +13,7 @@ import Arrow from './Arrow'
 import Dots from './Dots'
 import { CarouselProps } from './interface'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function CarouselComponent(props: CarouselProps, ref: any) {
   const {
     style,
@@ -61,14 +62,6 @@ function CarouselComponent(props: CarouselProps, ref: any) {
   const [slickDirection, setSlickDirection] = useState<
     'position' | 'negative' | null
   >(null)
-
-  const [computedStyle, setComputedStyle] = useState<{
-    slickWrapper: React.CSSProperties | null
-    dotsWrapper: React.CSSProperties | null
-  }>({
-    slickWrapper: null,
-    dotsWrapper: null
-  })
 
   const mergeIndex =
     typeof currentIndex === 'number' ? getValidIndex(currentIndex) : index
@@ -181,7 +174,6 @@ function CarouselComponent(props: CarouselProps, ref: any) {
     >
       <div
         ref={refSlickWrapper}
-        style={computedStyle.slickWrapper as React.CSSProperties}
         className={classNames(
           `${prefixClass}-${animation}`,
           `${prefixClass}-${direction}`,
@@ -195,17 +187,14 @@ function CarouselComponent(props: CarouselProps, ref: any) {
           const isPrev = index === prevIndex
           const isNext = index === nextIndex
           const shouldRenderChild = isCurrent || isPrev || isNext
-
           if (!shouldRenderChild) {
             return null
           }
-
           const {
             style: childStyle,
             className: childClassName,
             onClick: childOnClick
           } = item.props
-
           return React.cloneElement(item, {
             'aria-hidden': !isCurrent,
             style: Object.assign(
@@ -245,7 +234,6 @@ function CarouselComponent(props: CarouselProps, ref: any) {
       </div>
       {dotsType !== 'never' && childrenListLength > 1 && (
         <div
-          style={computedStyle.dotsWrapper as React.CSSProperties}
           className={classNames(
             `${prefixClass}-dots-wrapper`,
             `${prefixClass}-dots-wrapper-${dotsPosition}`
