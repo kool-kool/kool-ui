@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "ES6",
+    "module": "ESNext",
+    "jsx": "react",
+    "strict": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@kool-kool/kool-ui": ["src/index.ts"]
+    },
+    "lib": ["es2015", "dom"]
+  },
+  "include": ["src/**/*", "svgr.d.ts"]
+}

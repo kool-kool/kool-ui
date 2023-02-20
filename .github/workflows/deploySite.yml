@@ -1,0 +1,42 @@
+name: deploy document site
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - name: Cache
+        id: cache-dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            **/node_modules
+          key: ${{runner.OS}}-${{hashFiles('**/yarn.lock')}}
+      # 安装依赖
+      - name: Installing Dependencies
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+        run: yarn install
+
+      - name: Build 🔨
+        run: yarn build:site
+
+      - name: Deploy 🚀
+        # 使用github-pages-deploy-action 将构建结果commit 到gh-pages中
+        # https://github.com/marketplace/actions/deploy-to-github-pages
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: doc-site # The folder the action should deploy.
+
