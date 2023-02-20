@@ -1,7 +1,7 @@
 import React, { FC, Fragment, ReactNode } from 'react'
 import './style/index.scss'
 
-interface SwitchProps {
+export interface SwitchProps {
   defaultChecked?: boolean
   checked?: boolean
   size?: 'default' | 'small'

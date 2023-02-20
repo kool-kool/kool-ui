@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom'
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
-import Switch from '../index'
+import Switch from '../Switch'
 
 test('switch disabled', () => {
   const container = render(<Switch disabled data-testid="switchid" />)

@@ -1,12 +1,16 @@
-import { Button } from '@kool-kool/kool-ui'
-// TODO
-import { message } from '@kool-kool/kool-ui/message/Message'
+import { Button, message } from '@kool-kool/kool-ui'
 import React from 'react'
-import './index.scss'
 
 const App: React.FC = () => {
   return (
-    <div className={'btns'}>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: '5px'
+      }}
+    >
       <Button
         onClick={() =>
           message.success({ type: 'success', content: '新增成功' })
