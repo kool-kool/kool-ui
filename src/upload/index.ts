@@ -1,4 +1,1 @@
-import Upload from './Upload'
-
-export default Upload
-export { UploadFile } from './Upload'
+export { default as Upload, type UploadFile } from './Upload'
