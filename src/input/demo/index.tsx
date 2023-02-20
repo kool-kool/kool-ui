@@ -1,4 +1,4 @@
-import { Input } from 'kool-ui'
+import { Input } from '@kool-kool/kool-ui'
 import React from 'react'
 
 const InputDemo = () => (

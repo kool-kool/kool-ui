@@ -1,4 +1,4 @@
-import { Switch } from 'kool-ui'
+import { Switch } from '@kool-kool/kool-ui'
 import React from 'react'
 
 const App2: React.FC = () => {

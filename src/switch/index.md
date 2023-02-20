@@ -52,4 +52,3 @@ Switch 元件是一个开关的选择器，在我们表示开关状态，或两�
 | unCheckedChildren | 非选中时的内容                      | ReactNode                                | -       |
 | onChange          | 变化时的回调函数                    | function(checked: boolean, event: Event) | -       |
 | onClick           | 点击时的回调函数                    | function(checked: boolean, event: Event) | -       |
-

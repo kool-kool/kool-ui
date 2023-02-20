@@ -1,4 +1,4 @@
-import { Button, Carousel, Space } from 'kool-ui'
+import { Button, Carousel, Space } from '@kool-kool/kool-ui'
 import React, { useState } from 'react'
 
 const contentStyle: React.CSSProperties = {

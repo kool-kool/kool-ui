@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
-import { Message } from 'kool-ui'
 import React from 'react'
+import { Message } from '../index'
 
 test('success type has class name success', () => {
   const container = render(
