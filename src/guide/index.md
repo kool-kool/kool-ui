@@ -8,8 +8,8 @@ KOOL-UI 是一套基于 react 打造的组件库，使用 hook 和 ts 进行开�
 
 使用 npm 安装
 
-```js
-  npm install @kool-kool/kool-ui
+```bash
+npm install @kool-kool/kool-ui
 ```
 
 引入 css 文件
