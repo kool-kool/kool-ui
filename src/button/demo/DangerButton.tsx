@@ -1,8 +1,8 @@
-import { Button } from '@kool-kool/kool-ui'
+import { Button, Space } from '@kool-kool/kool-ui'
 import React from 'react'
 const BtnApp: React.FC = () => {
   return (
-    <div style={{ display: 'flex' }}>
+    <Space size="large">
       <Button type="primary" danger>
         primary
       </Button>
@@ -19,7 +19,7 @@ const BtnApp: React.FC = () => {
       <Button type="ghost" danger>
         Ghost
       </Button>
-    </div>
+    </Space>
   )
 }
 

@@ -12,7 +12,7 @@ const contentStyle: React.CSSProperties = {
 
 const App: React.FC = () => {
   return (
-    <Carousel>
+    <Carousel autoPlay={true}>
       <div>
         <h3 style={contentStyle}>1</h3>
       </div>

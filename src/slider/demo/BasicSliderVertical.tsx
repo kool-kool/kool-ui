@@ -15,7 +15,6 @@ const BasicSlider: React.FC = () => {
         />
       </div>
       <Switch
-        checked={disable}
         onChange={() => {
           setDisable(!disable)
         }}

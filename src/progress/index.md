@@ -7,7 +7,7 @@ keywords: ['kool ui', 'progress', '进度条']
 toc: content
 ---
 
-# process 进度条
+# progress 进度条
 
 进度条。
 

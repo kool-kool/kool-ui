@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ProgressErrorIcon, ProgressSuccessIcon } from '../icon'
 
 interface ProcessProps {
@@ -21,6 +21,12 @@ const Progress = (Props: ProcessProps) => {
       return <div>{percent}%</div>
     }
   }
+
+  useEffect(() => {
+    if (percent > 100) {
+      throw new Error('进度不能超过100')
+    }
+  })
 
   const classes = classNames('koo-progress-container', className)
   const classesContent = classNames('koo-progress-content', {

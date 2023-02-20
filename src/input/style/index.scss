@@ -10,7 +10,11 @@
   border-radius: 5px;
 
   &:hover {
-    border: var(--koo-blue-4) 1px solid;
+    outline: var(--koo-blue-4) 1px solid;
+  }
+
+  &:focus {
+    outline: var(--koo-gray-8) 1px solid;
   }
 
   &::-webkit-input-placeholder {
@@ -27,10 +31,11 @@
 }
 
 .koo-input-disabled {
-  border: var(--koo-failed-color) 1px solid;
+  outline: var(--koo-failed-color) 1px solid;
 
   &:hover {
-    border: var(--koo-failed-color) 1px solid;
+    outline: var(--koo-failed-color) 1px solid;
+    cursor: not-allowed;
   }
 }
 
@@ -43,8 +48,6 @@
   margin-left: -3px;
   margin-right: -3px;
   font-weight: var(--koo-font-weight-regular);
-  color: var(--koo-gray-1);
   text-align: center;
-  background-color: var(--koo-color-3);
   white-space: nowrap;
 }

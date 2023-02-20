@@ -27,7 +27,7 @@ const App: React.FC = () => {
       </Button>
       <Button
         onClick={() =>
-          message.warn({ type: 'warn', content: '伺服器出了一點問題' })
+          message.warn({ type: 'warn', content: '服务器出了一點問題' })
         }
       >
         Warning

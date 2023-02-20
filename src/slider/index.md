@@ -7,7 +7,7 @@ keywords: ['kool ui', 'Slider', '滑动输入条']
 toc: content
 ---
 
-# slider
+# slider 滑动输入条
 
 滑动条
 

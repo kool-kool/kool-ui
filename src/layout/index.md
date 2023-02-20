@@ -27,9 +27,9 @@ _注：基于 flex 实现，请注意[兼容性](http://caniuse.com/#search=flex
 
 <code src="./demo/basic.tsx">典型的页面布局类型</code>
 
-### 侧边布局
-
-<code src="./demo/side.tsx">侧边两列布局</code>
+[//]: # '### 侧边布局'
+[//]: #
+[//]: # '<code src="./demo/side.tsx">侧边两列布局</code>'
 
 ## API
 
