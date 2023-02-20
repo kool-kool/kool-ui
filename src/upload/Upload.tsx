@@ -1,7 +1,7 @@
 import axios from 'axios'
-import UploadList from 'kool-ui/upload/UploadList'
 import React, { ChangeEvent, useRef, useState } from 'react'
 import { Button } from '../button/index'
+import UploadList from './UploadList'
 
 export type UploadFileStatus = 'ready' | 'uploading' | 'success' | 'error'
 export interface UploadFile {
