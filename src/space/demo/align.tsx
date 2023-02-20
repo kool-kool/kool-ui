@@ -1,4 +1,4 @@
-import { Button, Space } from 'kool-ui'
+import { Button, Space } from '@kool-kool/kool-ui'
 import React from 'react'
 import './style.css'
 

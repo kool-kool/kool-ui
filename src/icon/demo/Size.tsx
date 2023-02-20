@@ -1,5 +1,4 @@
-import { HomeIcon } from 'kool-ui'
-import { LoadingIcon } from 'kool-ui/icon'
+import { HomeIcon } from '@kool-kool/kool-ui'
 import React from 'react'
 
 const App = () => {
@@ -19,7 +18,6 @@ const App = () => {
           fontSize: 40
         }}
       />
-      <LoadingIcon />
     </div>
   )
 }

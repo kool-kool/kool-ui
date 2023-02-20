@@ -1,4 +1,4 @@
-import { Button, Tabs } from 'kool-ui'
+import { Button, Tabs } from '@kool-kool/kool-ui'
 import React, { useState } from 'react'
 const BtnApp: React.FC = () => {
   const [size, setSize] = useState<'small' | 'large' | 'middle'>('middle')

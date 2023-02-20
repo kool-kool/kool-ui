@@ -1,4 +1,4 @@
-import { Tabs } from 'kool-ui'
+import { Tabs } from '@kool-kool/kool-ui'
 import React from 'react'
 const BtnApp: React.FC = () => {
   const item = [

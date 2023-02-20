@@ -1,4 +1,4 @@
-import { Slider } from 'kool-ui'
+import { Slider } from '@kool-kool/kool-ui'
 import React from 'react'
 
 const SliderRange: React.FC = () => {

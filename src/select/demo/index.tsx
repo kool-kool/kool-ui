@@ -1,4 +1,4 @@
-import { Option, Select } from 'kool-ui'
+import { Option, Select } from '@kool-kool/kool-ui'
 import React from 'react'
 
 const selectDemo = () => (
