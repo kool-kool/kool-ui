@@ -1,6 +1,9 @@
 ---
-description: kool ui process 进度条
-keywords: ['kool ui', 'process', '进度条']
+description: kool ui progress 进度条
+group:
+  title: 反馈
+  order: 2
+keywords: ['kool ui', 'progress', '进度条']
 toc: content
 ---
 

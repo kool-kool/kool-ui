@@ -1,5 +1,8 @@
 ---
 description: kool ui Tabs 标签页
+group:
+  title: 数据展示
+  order: 2
 keywords: ['kool ui', 'Tabs', '标签页']
 toc: content
 ---
@@ -34,3 +37,27 @@ toc: content
 <code src="./demo/CenteredTabs.tsx">居中</code>
 <code src="./demo/SizeTab.tsx">大小</code>
 <code src="./demo/PositionTab.tsx">位置</code>
+
+## API
+
+### Props
+
+| 参数        | 类型                             | 默认值 | 描述                                      |
+| :---------- | :------------------------------- | :----- | :---------------------------------------- |
+| type        | 'line' \ 'card'                  | 'line' | 页签的基本样式，可选 line、card 类型      |
+| size        | 'middle' \ 'large' \ 'small'     | false  | 大小，提供 large middle 和 small 三种大小 |
+| activeIndex | number                           | -      | 大小，提供 large middle 和 small 三种大小 |
+| className   | string                           | -      | 自定义类名                                |
+| centered    | boolean                          | false  | 标签居中展示                              |
+| item        | TabsItemProps                    | false  | 标签居中展示                              |
+| onSelect    | function(activeKey) {}           | -      | 更改页签是的回调                          |
+| tabPosition | 'left' \'right'\ 'top'\ 'bottom' | 'top'  | 页签位置                                  |
+
+### TabsItemProps
+
+| 参数     | 类型            | 默认值 | 描述             |
+| :------- | :-------------- | :----- | :--------------- |
+| label    | React.ReactNode | -      | 选项卡头显示文字 |
+| disabled | boolean         | false  | 是否禁用         |
+| children | React.ReactNode | -      | 选项卡头显示内容 |
+| key      | string          | -      | 对应 activeKey   |

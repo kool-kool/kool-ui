@@ -1,4 +1,7 @@
 ---
+group:
+  title: 数据录入
+  order: 1
 toc: content
 ---
 
