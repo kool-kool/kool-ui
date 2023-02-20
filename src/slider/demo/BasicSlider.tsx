@@ -9,9 +9,8 @@ const BasicSlider: React.FC = () => {
         <Slider range={false} max={20} min={10} disable={disable} />
       </div>
       <Switch
-        checked={disable}
         onChange={() => {
-          setDisable(!disable)
+          setDisable((prev) => !prev)
         }}
       />
     </div>

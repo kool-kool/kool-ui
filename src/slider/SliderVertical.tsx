@@ -179,7 +179,9 @@ const SliderVertical = (Props: SliderVerticalProps) => {
         {showText ? (
           <span
             className="koo-slider-text-vertical"
-            style={{ top: `calc(${down}% - 10px)` }}
+            style={{
+              top: `calc(${down}% - 10px)`
+            }}
           >
             {dealText(down)}
           </span>

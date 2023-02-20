@@ -1,8 +1,8 @@
-import { Button, HomeIcon } from '@kool-kool/kool-ui'
+import { Button, HomeIcon, Space } from '@kool-kool/kool-ui'
 import React from 'react'
 const BtnApp: React.FC = () => {
   return (
-    <div style={{ display: 'flex' }}>
+    <Space size="large">
       <Button type="primary" icon={<HomeIcon />}>
         Primary Button
       </Button>
@@ -11,7 +11,7 @@ const BtnApp: React.FC = () => {
       <Button type="text">Text Button</Button>
       <Button type="link">Link Button</Button>
       <Button type="ghost">Ghost Button</Button>
-    </div>
+    </Space>
   )
 }
 

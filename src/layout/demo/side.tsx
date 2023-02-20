@@ -5,8 +5,8 @@ const { Header, Side, Footer, Content } = Layout
 const App = () => {
   return (
     <Layout hasSide style={{ minHeight: '300px' }}>
-      <Side></Side>
-      <Layout></Layout>
+      <Side>1</Side>
+      <Layout>2</Layout>
     </Layout>
   )
 }

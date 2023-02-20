@@ -87,14 +87,25 @@
 
 .koo-slider-text {
   position: absolute;
-  top: -20px;
+  top: -30px;
   user-select: none;
+  height: 20px;
+  background-color: black;
+  color: white;
+  border-bottom: solid 5px black;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .koo-slider-text-vertical {
   position: absolute;
   left: 20px;
   user-select: none;
+  height: 20px;
+  background-color: black;
+  color: white;
+  border-bottom: solid 5px black;
+  border-radius: 5px;
 }
 
 .koo-slider-short-left {

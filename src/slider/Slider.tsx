@@ -190,7 +190,9 @@ const NormalSlider = (Props: SliderProps) => {
       {showText ? (
         <span
           className="koo-slider-text"
-          style={{ left: `calc(${left}% - 10px)` }}
+          style={{
+            left: `calc(${left}% - 10px)`
+          }}
         >
           {dealText(left)}
         </span>

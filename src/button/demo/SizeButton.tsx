@@ -1,35 +1,37 @@
-import { Button } from '@kool-kool/kool-ui'
+import { Button, Space } from '@kool-kool/kool-ui'
 import React, { useState } from 'react'
 
 const BtnApp: React.FC = () => {
   const [size, setsize] = useState<'middle' | 'large' | 'small'>('middle')
   return (
     <div>
-      <Button
-        onClick={() => {
-          setsize('large')
-        }}
-      >
-        {' '}
-        large{' '}
-      </Button>
-      <Button
-        onClick={() => {
-          setsize('middle')
-        }}
-      >
-        {' '}
-        middle{' '}
-      </Button>
-      <Button
-        onClick={() => {
-          setsize('small')
-        }}
-      >
-        {' '}
-        small{' '}
-      </Button>
-      <div style={{ display: 'flex' }}>
+      <Space size="large">
+        <Button
+          onClick={() => {
+            setsize('large')
+          }}
+        >
+          {' '}
+          large{' '}
+        </Button>
+        <Button
+          onClick={() => {
+            setsize('middle')
+          }}
+        >
+          {' '}
+          middle{' '}
+        </Button>
+        <Button
+          onClick={() => {
+            setsize('small')
+          }}
+        >
+          {' '}
+          small{' '}
+        </Button>
+      </Space>
+      <Space size="normal">
         <Button type="primary" size={size}>
           Primary
         </Button>
@@ -46,7 +48,7 @@ const BtnApp: React.FC = () => {
         <Button type="ghost" size={size}>
           Ghost
         </Button>
-      </div>
+      </Space>
     </div>
   )
 }

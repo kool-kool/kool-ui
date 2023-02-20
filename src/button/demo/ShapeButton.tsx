@@ -1,34 +1,36 @@
-import { Button } from '@kool-kool/kool-ui'
+import { Button, Space } from '@kool-kool/kool-ui'
 import React, { useState } from 'react'
 const BtnApp: React.FC = () => {
   const [shape, setShape] = useState<'round' | 'circle' | 'default'>('round')
   return (
     <div>
-      <Button
-        onClick={() => {
-          setShape('round')
-        }}
-      >
-        {' '}
-        round{' '}
-      </Button>
-      <Button
-        onClick={() => {
-          setShape('circle')
-        }}
-      >
-        {' '}
-        circle{' '}
-      </Button>
-      <Button
-        onClick={() => {
-          setShape('default')
-        }}
-      >
-        {' '}
-        default{' '}
-      </Button>
-      <div style={{ display: 'flex' }}>
+      <Space size="large">
+        <Button
+          onClick={() => {
+            setShape('round')
+          }}
+        >
+          {' '}
+          round{' '}
+        </Button>
+        <Button
+          onClick={() => {
+            setShape('circle')
+          }}
+        >
+          {' '}
+          circle{' '}
+        </Button>
+        <Button
+          onClick={() => {
+            setShape('default')
+          }}
+        >
+          {' '}
+          default{' '}
+        </Button>
+      </Space>
+      <Space size="normal">
         <Button type="primary" shape={shape}>
           Primary
         </Button>
@@ -45,7 +47,7 @@ const BtnApp: React.FC = () => {
         <Button type="ghost" shape={shape}>
           Ghost
         </Button>
-      </div>
+      </Space>
     </div>
   )
 }

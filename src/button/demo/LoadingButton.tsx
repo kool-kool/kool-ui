@@ -1,11 +1,11 @@
-import { Button, HomeIcon } from '@kool-kool/kool-ui'
+import { Button, HomeIcon, Space } from '@kool-kool/kool-ui'
 import React, { useState } from 'react'
 const BtnApp: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false)
   const [loading1, setLoading1] = useState<boolean>(false)
   const [loading2, setLoading2] = useState<boolean>(false)
   return (
-    <div style={{ display: 'flex', gap: '10px' }}>
+    <Space size="large">
       <div>
         <Button
           type="primary"
@@ -51,7 +51,7 @@ const BtnApp: React.FC = () => {
           Small
         </Button>
       </div>
-    </div>
+    </Space>
   )
 }
 
