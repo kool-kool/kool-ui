@@ -16,10 +16,10 @@ toc: content
 
 ### props
 
-| 参数  | 类型                                                      | 默认值    | 描述     |
-| :---- | :-------------------------------------------------------- | :-------- | :------- |
-| size  | 'small' \| 'normal' \| 'large'                            | ‘normal’  | 图标大小 |
-| color | 'primary' \| 'success' \| ‘info’ \| ‘warning’ \| ‘danger’ | ‘primary’ | 图标颜色 |
+| 参数  | 类型                                                      | 默认值   | 描述     |
+| :---- | :-------------------------------------------------------- | :------- | :------- |
+| size  | 'small' \| 'normal' \| 'large'                            | ‘normal‘ | 图标大小 |
+| color | 'primary' \| 'success' \| ‘info’ \| ‘warning’ \| ‘danger’ | ’info‘   | 图标颜色 |
 
 ### css
 

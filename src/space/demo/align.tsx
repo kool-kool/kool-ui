@@ -1,36 +1,54 @@
 import { Button, Space } from '@kool-kool/kool-ui'
 import React from 'react'
-import './style.css'
+
+const alignContainer: React.CSSProperties = {
+  display: 'flex',
+  flexWrap: 'wrap',
+  alignItems: 'flex-start'
+}
+
+const alignBlock: React.CSSProperties = {
+  flex: 'none',
+  margin: '8px 4px',
+  padding: '4px',
+  border: '1px solid #40a9ff'
+}
+
+const mockBlock: React.CSSProperties = {
+  display: 'inline-block',
+  padding: '32px 8px 16px',
+  background: 'rgba(150, 150, 150, 0.2)'
+}
 
 const App: React.FC = () => (
-  <div className="space-align-container">
-    <div className="space-align-block">
+  <div style={alignContainer}>
+    <div style={alignBlock}>
       <Space align="start">
         start
         <Button type="primary">Primary</Button>
-        <span className="mock-block">Block</span>
+        <span style={mockBlock}>Block</span>
       </Space>
     </div>
-    <div className="space-align-block">
+    <div style={alignBlock}>
       <Space align="center">
         center
         <Button type="primary">Primary</Button>
-        <span className="mock-block">Block</span>
+        <span style={mockBlock}>Block</span>
       </Space>
     </div>
 
-    <div className="space-align-block">
+    <div style={alignBlock}>
       <Space align="end">
         end
         <Button type="primary">Primary</Button>
-        <span className="mock-block">Block</span>
+        <span style={mockBlock}>Block</span>
       </Space>
     </div>
-    <div className="space-align-block">
+    <div style={alignBlock}>
       <Space align="baseline">
         baseline
         <Button type="primary">Primary</Button>
-        <span className="mock-block">Block</span>
+        <span style={mockBlock}>Block</span>
       </Space>
     </div>
   </div>

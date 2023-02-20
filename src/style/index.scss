@@ -1,52 +1,35 @@
 @import './variables';
 
-// breadcrumb
-@import '../breadcrumb/style/index';
+@import '../breadcrumb/style';
 
-// button
-@import '../button/style/index';
+@import '../button/style';
 
-// layout
 @import '../layout/style';
 
-// space
 @import '../space/style';
 
-// link
-@import '../link/style/index';
+@import '../link/style';
 
-// icon
-@import '../icon/style/index';
+@import '../icon/style';
 
-// scrollbar
-@import '../scrollbar/style/index';
+@import '../scrollbar/style';
 
-// global generic style
 @import './global';
 
-// animate
-@import './animate';
-
-// Tabs
 @import '../tabs/style';
 
-// input
-@import '../input/style/index';
+@import '../input/style';
 
-// select
-@import '../select/style/index';
+@import '../select/style';
 
-// carousel
 @import '../carouselMap/style';
 
-// alert
 @import '../alert/style';
 
-// slider
 @import '../slider/style';
 
-// process
 @import '../progress/style';
 
-// upload
 @import '../upload/style';
+
+@import '../switch/style';
