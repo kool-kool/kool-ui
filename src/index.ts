@@ -12,19 +12,24 @@ export {
   ArrowUpIcon,
   CheckIcon,
   CloseIcon,
+  ErrorIcon,
   ExclamationIcon,
   HomeIcon,
   IconWrapper,
   InfoIcon,
   ListIcon,
   MoreHorizIcon,
-  RoundKeyboardArrowRightIcon
+  ProgressErrorIcon,
+  ProgressSuccessIcon,
+  RoundKeyboardArrowRightIcon,
+  SuccessIcon
 } from './icon'
 export { Input } from './input'
 export { default as Layout } from './layout'
 export { Link, underlineClassName } from './link'
 export type { LinkProps, Underline } from './link'
 export { Message } from './message'
+export { default as Progress } from './progress'
 export { Scrollbar } from './scrollbar'
 export type { ScrollbarProps } from './scrollbar'
 export { Option, Select } from './select'
@@ -33,3 +38,4 @@ export { default as Slider } from './slider'
 export { default as Space } from './space'
 export { default as Switch } from './switch'
 export { Tabs } from './tabs'
+export { default as Upload } from './upload'

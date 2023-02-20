@@ -1,38 +1,18 @@
 import classNames from 'classnames'
 import toArray from 'rc-util/lib/Children/toArray'
-import React, { createContext, useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { getPrefixCls, useFlexGapSupport } from '../shared/index'
-import { Size } from '../shared/types/utils'
 
 import Item from './Item'
 
-export type SpaceSize = Size | number
-export type DirectionType = 'horizontal' | 'vertical'
-
-export interface SpaceProps extends React.HTMLAttributes<HTMLDivElement> {
-  prefixClassName?: string
-  className?: string
-  style?: React.CSSProperties
-  size?: SpaceSize | [SpaceSize, SpaceSize]
-  direction?: DirectionType
-  align?: 'start' | 'end' | 'center' | 'baseline'
-  wrap?: boolean
-  split?: React.ReactNode
-  rtl?: boolean
-}
-
-export const SpaceContext = createContext({
-  latestIndex: 0,
-  horizontalSize: 0,
-  verticalSize: 0,
-  supportFlexGap: false
-})
+import { SpaceContext, SpaceProps, SpaceSize } from './shared'
 
 const spaceSize = {
   small: 8,
   normal: 16,
   large: 24
 }
+
 const getSizeNumber = (size: SpaceSize) => {
   return typeof size === 'string' ? spaceSize[size] : size || 0
 }

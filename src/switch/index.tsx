@@ -28,7 +28,8 @@ const Switch: FC<SwitchProps> = ({
   loading = false,
   children,
   checkedChildren,
-  unCheckedChildren
+  unCheckedChildren,
+  ...otherProps
 }) => {
   const [isChecked, setIsChecked] = React.useState(defaultChecked)
 
@@ -45,12 +46,22 @@ const Switch: FC<SwitchProps> = ({
     }
   }
 
+  const handleClick = (e: React.MouseEvent<HTMLLabelElement>) => {
+    if (loading || disabled) {
+      return
+    }
+
+    if (onClick) {
+      onClick?.(e)
+    }
+  }
+
   return (
     <label
       className={`switch switch-${size} ${className} ${
         loading ? 'switch-loading' : ''
       }`}
-      onClick={onClick}
+      onClick={handleClick}
     >
       <Fragment>
         <input
@@ -59,6 +70,7 @@ const Switch: FC<SwitchProps> = ({
           onChange={handleChange}
           disabled={disabled || loading}
           autoFocus={autoFocus}
+          {...otherProps}
         />
         <span className="slider"></span>
         {loading ? <div className="loading"></div> : null}
