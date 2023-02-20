@@ -1,5 +1,8 @@
 ---
 description: kool ui Switch 开关
+group:
+  title: 数据录入
+  order: 3
 keywords: ['kool ui', 'Switch', '开关']
 toc: content
 ---
@@ -15,23 +18,13 @@ Switch 元件是一个开关的选择器，在我们表示开关状态，或两�
 
 ## 代码演示
 
-### 基本类型
-
 <code src="./demo/basic.tsx">基本类型</code>
-
-### 禁用类型
 
 <code src="./demo/disabled.tsx">禁用类型</code>
 
-### 加载类型
-
 <code src="./demo/loading.tsx">加载类型</code>
 
-### 大小类型
-
 <code src="./demo/size.tsx">大小类型</code>
-
-### 文字类型
 
 <code src="./demo/text.tsx">文字类型</code>
 

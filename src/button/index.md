@@ -1,5 +1,8 @@
 ---
 description: kool ui Button 按钮
+group:
+  title: 通用
+  order: 1
 keywords: ['kool ui', 'Button', '按钮']
 toc: content
 ---

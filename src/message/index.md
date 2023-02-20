@@ -1,5 +1,8 @@
 ---
 description: kool ui Message
+group:
+  title: 反馈
+  order: 3
 keywords: ['kool ui', 'Message']
 toc: content
 ---
