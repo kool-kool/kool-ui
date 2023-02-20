@@ -1,4 +1,4 @@
-import { Upload } from 'kool-ui'
+import { Upload } from '@kool-kool/kool-ui'
 import React from 'react'
 
 const App = () => {

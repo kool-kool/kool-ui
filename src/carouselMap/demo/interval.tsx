@@ -1,4 +1,4 @@
-import { Carousel } from 'kool-ui'
+import { Carousel } from '@kool-kool/kool-ui'
 import React from 'react'
 
 const contentStyle: React.CSSProperties = {
