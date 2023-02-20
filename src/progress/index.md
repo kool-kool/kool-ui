@@ -17,3 +17,13 @@ toc: content
 
 <code src="./demo/BasicProgress.tsx">基本类型</code>
 <code src="./demo/SuccessProgress.tsx">基本类型</code>
+
+## API
+
+### props
+
+| 参数    | 类型               | 默认值 | 描述         |
+| :------ | :----------------- | :----- | :----------- |
+| width   | string             | -      | 可定义的宽度 |
+| percent | number             | -      | 目前的进度   |
+| status  | 'success'/ 'error' | -      | 显示当前状态 |
