@@ -1,6 +1,6 @@
 {
   "name": "@kool-kool/kool-ui",
-  "version": "0.0.1-alpha.1",
+  "version": "1.0.2",
   "description": "a react + ts ui library",
   "keywords": [
     "kool-ui",
@@ -8,7 +8,7 @@
     "react-component",
     "component"
   ],
-  "homepage": "https://github.com/kool-kool/kool-ui#readme",
+  "homepage": "https://kool-kool.github.io/kool-ui",
   "bugs": {
     "url": "https://github.com/kool-kool/kool-ui/issues"
   },
@@ -20,7 +20,6 @@
   "author": "kooi-ui team",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
-  "browser": "dist/index.umd.js",
   "types": "dist/index.d.ts",
   "directories": {
     "doc": "docs"
@@ -89,6 +88,7 @@
     "@commitlint/config-conventional": "^17.4.2",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@svgr/rollup": "^6.5.1",
     "@testing-library/jest-dom": "^5.16.5",

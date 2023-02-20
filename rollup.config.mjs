@@ -1,5 +1,6 @@
 import babel from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
+import json from '@rollup/plugin-json'
 import resolve from '@rollup/plugin-node-resolve'
 import svgr from '@svgr/rollup'
 import cssnano from 'cssnano'
@@ -22,16 +23,6 @@ export default [
       {
         file: 'dist/index.cjs.js',
         format: 'cjs'
-      },
-      {
-        file: 'dist/index.umd.js',
-        format: 'umd',
-        // umd 需要指定name
-        name: 'kool-ui',
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM'
-        }
       }
     ],
     plugins: [
@@ -39,6 +30,8 @@ export default [
       resolve(),
       // 解决commmnjs 包的导入
       commonjs(),
+      // 导入json
+      json(),
       // 解决svg的引入
       svgr({ exportType: 'named' }),
       // 编译ts
@@ -51,7 +44,8 @@ export default [
       babel({
         presets: ['@babel/preset-env'],
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        exclude: '**/node_modules/**'
+        exclude: '**/node_modules/**',
+        babelHelpers: 'bundled'
       }),
       // 处理css
       postcss({

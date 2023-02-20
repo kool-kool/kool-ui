@@ -1,1 +1,16 @@
-# :tada: a react + ts ui library(:hammer: WIP...)
+# kool-ui
+
+<p align="center">
+  kool ui 可在 react 你快速构建项目的 UI 界面
+</p>
+
+## ✨ 特性
+
+- ✔️ 配置简单，上手容易
+- 🤟 极致的开发体验
+- ✂️ 完善的代码提示
+- 🖍️ 严格的 TypeScript 类型
+- 🚩 单元测试
+- 📃 优质详细的文档
+- ☝️ 提出需求，不断完善
+- 🛠 更多特性开发中
