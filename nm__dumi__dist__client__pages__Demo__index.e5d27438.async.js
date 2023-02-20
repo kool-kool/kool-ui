@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_kool_kool_kool_ui=self.webpackChunk_kool_kool_kool_ui||[]).push([[9],{12535:function(f,e,o){o.r(e),o.d(e,{default:function(){return r}});var n=o(4982),t=o(67294),u=function(){var d=(0,n.UO)(),l=d.id,m=(0,n.WF)(),s=m.demos,c=s[l]||{},a=c.component;return a&&(0,t.createElement)(a)},r=u}}]);
