@@ -46,7 +46,7 @@
     "stylelint": "stylelint **/*.scss",
     "stylelint:fix": "stylelint **/*.scss --fix",
     "test": " jest",
-    "tsc:check": "tsc --noEmit"
+    "tsc:check": "tsc --project tsconfig.check.json --noEmit"
   },
   "lint-staged": {
     "*.{json,md}": "prettier --ignore-unknown --write",
