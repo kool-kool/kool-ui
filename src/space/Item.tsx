@@ -1,16 +1,6 @@
 import React, { useContext } from 'react'
 
-import { DirectionType, SpaceContext } from './Space'
-
-export interface ItemProps {
-  className: string
-  children: React.ReactNode
-  index: number
-  direction?: DirectionType
-  marginDirection: 'marginLeft' | 'marginRight'
-  split?: string | React.ReactNode
-  wrap?: boolean
-}
+import { ItemProps, SpaceContext } from './shared'
 
 const Item = (props: ItemProps) => {
   const { horizontalSize, verticalSize, latestIndex, supportFlexGap } =

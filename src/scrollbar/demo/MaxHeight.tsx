@@ -1,4 +1,4 @@
-import { Button, Scrollbar } from 'kool-ui'
+import { Button, Scrollbar } from '@kool-kool/kool-ui'
 import React, { useState } from 'react'
 
 let key = 5

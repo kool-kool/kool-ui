@@ -1,4 +1,4 @@
-import { HomeIcon } from 'kool-ui'
+import { HomeIcon } from '@kool-kool/kool-ui'
 import React from 'react'
 
 const App = () => {

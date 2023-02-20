@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
-import { Slider } from 'kool-ui'
 import React from 'react'
+import Slider from '../index'
 
 test(' Slider exist ', () => {
   const wrapper = render(<Slider />)

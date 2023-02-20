@@ -43,6 +43,9 @@ jobs:
       # 运行样式扫描
       - name: Running Stylelint
         run: yarn stylelint
+      # 运行样式扫描
+      - name: Running type check
+        run: yarn tsc:check
       # 运行自动化测试
       - name: Running Test
         run: yarn test

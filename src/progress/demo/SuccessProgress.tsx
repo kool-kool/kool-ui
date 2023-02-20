@@ -1,4 +1,4 @@
-import { Progress, Space } from 'kool-ui'
+import { Progress, Space } from '@kool-kool/kool-ui'
 import React from 'react'
 
 const App: React.FC = () => {

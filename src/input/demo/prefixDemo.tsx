@@ -1,4 +1,4 @@
-import { HomeIcon, Input } from 'kool-ui'
+import { HomeIcon, Input } from '@kool-kool/kool-ui'
 import React from 'react'
 
 const onSearch = () => console.log('123')

@@ -1,6 +1,6 @@
 import classNames from 'classnames'
-import { optionProps } from 'kool-ui/select/Option'
 import React, { createContext, FC, useState } from 'react'
+import { optionProps } from './Option'
 
 type SelectCallback = (selectedValue: string, selectedLabel: string) => void
 

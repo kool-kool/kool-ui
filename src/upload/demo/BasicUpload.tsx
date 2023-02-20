@@ -1,5 +1,6 @@
 import { Upload } from 'kool-ui'
 import { UploadFile } from 'kool-ui/upload/Upload'
+import { Upload } from '@kool-kool/kool-ui'
 import React from 'react'
 
 const App = () => {

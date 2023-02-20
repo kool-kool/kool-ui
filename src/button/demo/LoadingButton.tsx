@@ -1,4 +1,4 @@
-import { Button, HomeIcon } from 'kool-ui'
+import { Button, HomeIcon } from '@kool-kool/kool-ui'
 import React, { useState } from 'react'
 const BtnApp: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false)

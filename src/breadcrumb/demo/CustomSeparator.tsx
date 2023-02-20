@@ -1,4 +1,8 @@
-import { Breadcrumbs, Link, RoundKeyboardArrowRightIcon } from 'kool-ui'
+import {
+  Breadcrumbs,
+  Link,
+  RoundKeyboardArrowRightIcon
+} from '@kool-kool/kool-ui'
 import React from 'react'
 
 const BreadcrumbItems = (

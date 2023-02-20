@@ -1,4 +1,4 @@
-import { Scrollbar } from 'kool-ui'
+import { Scrollbar } from '@kool-kool/kool-ui'
 import React from 'react'
 
 const contents = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]

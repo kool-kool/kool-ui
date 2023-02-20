@@ -1,4 +1,4 @@
-import { Layout, Space } from 'kool-ui'
+import { Layout, Space } from '@kool-kool/kool-ui'
 import React from 'react'
 
 const { Header, Side, Footer, Content } = Layout

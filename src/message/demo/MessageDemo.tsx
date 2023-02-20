@@ -1,5 +1,6 @@
-import { Button } from 'kool-ui'
-import { message } from 'kool-ui/message/Message'
+import { Button } from '@kool-kool/kool-ui'
+// TODO
+import { message } from '@kool-kool/kool-ui/message/Message'
 import React from 'react'
 import './index.scss'
 

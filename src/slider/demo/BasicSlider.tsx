@@ -1,4 +1,4 @@
-import { Slider, Switch } from 'kool-ui'
+import { Slider, Switch } from '@kool-kool/kool-ui'
 import React, { useState } from 'react'
 
 const BasicSlider: React.FC = () => {

@@ -1,4 +1,4 @@
-import { Input, Slider, Switch } from 'kool-ui'
+import { Input, Slider, Switch } from '@kool-kool/kool-ui'
 import React, { useState } from 'react'
 
 const BasicSlider: React.FC = () => {
@@ -18,8 +18,9 @@ const BasicSlider: React.FC = () => {
       </div>
       <Input
         value={inputNumber}
-        onChange={(e) => {
-          setInputNumber(Number((e.target as HTMLInputElement).value))
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+          console.log(e.target.value, 'value')
+          setInputNumber(Number(e.target.value))
         }}
       />
       <Switch
