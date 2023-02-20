@@ -1,13 +1,44 @@
 import '@testing-library/jest-dom'
-import { render } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 import Switch from '../index'
-import './style.scss'
 
 test('switch disabled', () => {
-  const { container } = render(<Switch disabled />)
-  // const testNode = wrapper.container
-  // console.log('container', container)
-  // expect(testNode).toBeInTheDocument()
-  // expect(testNode.disabled).toBeTruthy()
+  const container = render(<Switch disabled data-testid="switchid" />)
+  const element = container.getByTestId('switchid')
+  expect(element).toBeInTheDocument()
+  expect(element).toBeDisabled()
+})
+
+test('switch checked', () => {
+  const container = render(<Switch checked data-testid="switchid" />)
+  const element = container.getByTestId('switchid')
+  expect(element).toBeInTheDocument()
+  expect(element).toBeChecked()
+})
+
+test('loading onclick function no click', () => {
+  const jestFn = jest.fn()
+  const wrapper = render(
+    <Switch onClick={jestFn} loading data-testid="switchid" />
+  )
+  const element = wrapper.getByTestId('switchid')
+  fireEvent.click(element)
+  expect(jestFn).not.toHaveBeenCalled()
+})
+
+test('disabled onclick function no click', () => {
+  const jestFn = jest.fn()
+  const wrapper = render(
+    <Switch onClick={jestFn} disabled data-testid="switchid" />
+  )
+  const element = wrapper.getByTestId('switchid')
+  fireEvent.click(element)
+  expect(jestFn).not.toHaveBeenCalled()
+})
+
+test('small size has switch-samll class name', () => {
+  const wrapper = render(<Switch size={'small'} data-testid="switchid" />)
+  const element = wrapper.getByTestId('switchid')
+  expect(element.parentNode).toHaveClass('switch-small')
 })

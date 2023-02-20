@@ -1,4 +1,4 @@
-import { Link } from 'kool-ui'
+import { Link } from '@kool-kool/kool-ui'
 import React from 'react'
 
 const App = () => {

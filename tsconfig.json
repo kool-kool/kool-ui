@@ -4,7 +4,7 @@
     "target": "ES6",
     "module": "ESNext",
     "jsx": "react",
-    "declaration": true,
+    "declaration": false,
     "strict": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
@@ -12,11 +12,10 @@
     "resolveJsonModule": true,
     "paths": {
       "@@/*": [".dumi/tmp/*"],
-      "kool-ui": ["src"],
-      "kool-ui/*": ["src/*", "*"]
+      "@kool-kool/kool-ui": ["src/index.ts"],
+      "@kool-kool/kool-ui/*": ["src/*", "*"]
     },
     "lib": ["es2015", "dom"]
   },
-  "include": ["src/**/*", ".dumi/**/*", ".dumirc.ts", "svgr.d.ts"],
-  "exclude": ["node_modules"]
+  "include": ["src/**/*", ".dumi/**/*", ".dumirc.ts", "svgr.d.ts"]
 }

@@ -1,4 +1,4 @@
-import { Input, Progress } from 'kool-ui'
+import { Input, Progress } from '@kool-kool/kool-ui'
 import React, { useState } from 'react'
 
 const App: React.FC = () => {

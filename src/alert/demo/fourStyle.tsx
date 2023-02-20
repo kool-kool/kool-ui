@@ -1,4 +1,4 @@
-import { Alert, Space } from 'kool-ui'
+import { Alert, Space } from '@kool-kool/kool-ui'
 import React from 'react'
 
 const App = () => {

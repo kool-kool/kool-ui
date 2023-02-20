@@ -1,4 +1,4 @@
-import { Alert } from 'kool-ui'
+import { Alert } from '@kool-kool/kool-ui'
 import React from 'react'
 
 const App: React.FC = () => (

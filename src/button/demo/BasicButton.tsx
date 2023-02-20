@@ -1,4 +1,4 @@
-import { Button, HomeIcon } from 'kool-ui'
+import { Button, HomeIcon } from '@kool-kool/kool-ui'
 import React from 'react'
 const BtnApp: React.FC = () => {
   return (
