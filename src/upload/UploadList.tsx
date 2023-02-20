@@ -6,7 +6,7 @@ import {
   ProgressSuccessIcon
 } from '../icon'
 import Progress from '../progress'
-import { UploadFile } from './upload'
+import { UploadFile } from './Upload'
 interface UploadListProps {
   fileList: UploadFile[]
   onRemove: (_file: UploadFile) => void
