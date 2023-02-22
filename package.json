@@ -42,8 +42,8 @@
     "preview:site": "npm run build:site && serve doc-site",
     "public": "npm publish --access public",
     "release": "standard-version",
-    "stylelint": "stylelint **/*.scss",
-    "stylelint:fix": "stylelint **/*.scss --fix",
+    "stylelint": "stylelint **/*.{scss,css}",
+    "stylelint:fix": "stylelint **/*.{scss,css} --fix",
     "test": " jest",
     "tsc:check": "tsc --project tsconfig.check.json --noEmit"
   },

@@ -4,7 +4,7 @@ keywords: [Kool_UI, 'alert', 'tips']
 toc: content
 group:
   title: 数据展示
-  order: 3
+  order: 5
 title: Carousel 轮播图
 ---
 

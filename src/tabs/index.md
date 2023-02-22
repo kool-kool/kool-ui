@@ -1,8 +1,6 @@
 ---
 description: kool ui Tabs 标签页
-group:
-  title: 数据展示
-  order: 2
+group: 数据展示
 keywords: ['kool ui', 'Tabs', '标签页']
 toc: content
 ---

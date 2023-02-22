@@ -1,10 +1,8 @@
 ---
 description: kool_UI Space
+group: 布局
 keywords: [Kool_UI, flex, '布局', '间距', 'space']
 toc: content
-group:
-  title: 布局
-  order: 2
 ---
 
 # Space 间距

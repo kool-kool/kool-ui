@@ -23,16 +23,17 @@
 
 ## 安装
 
-### 使用 npm 安装
-
 ```bash
-npm install @kool-kool/kool-ui
-```
+# 选择一个你喜欢的包管理器
 
-### 使用 yarn 安装
+# npm
+npm install @kool-kool/kool-ui --save
 
-```bash
-npm install @kool-kool/kool-ui
+# Yarn
+yarn add @kool-kool/kool-ui
+
+# pnpm
+pnpm install @kool-kool/kool-ui
 ```
 
 ## 使用

@@ -1,7 +1,5 @@
 ---
-group:
-  title: 数据录入
-  order: 2
+group: 数据录入
 toc: content
 ---
 

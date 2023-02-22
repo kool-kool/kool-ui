@@ -1,8 +1,6 @@
 ---
 description: kool ui Upload 上传文件
-group:
-  title: 数据录入
-  order: 4
+group: 数据录入
 keywords: ['kool ui', 'upload', '上传文件']
 toc: content
 ---

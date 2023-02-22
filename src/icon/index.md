@@ -1,7 +1,5 @@
 ---
-group:
-  title: 通用
-  order: 2
+group: 通用
 toc: content
 ---
 

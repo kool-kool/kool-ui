@@ -7,7 +7,7 @@ export default defineConfig({
   publicPath: '/kool-ui/',
   themeConfig: {
     nav: [
-      { title: '指南', link: '/guide' },
+      { title: '指南', link: '/guide/start' },
       { title: '组件', link: '/components/button' }
     ]
   }
