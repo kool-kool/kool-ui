@@ -1,3 +1,9 @@
+---
+description: kool ui 自定义
+keywords: ['kool ui', 'customize', '自定义']
+toc: content
+---
+
 # 自定义
 
 kool ui 采用 CSS variables 默认提供一套主题, 方便使用者覆盖样式。例如：将主题颜色从蓝色改成紫色或粉色
