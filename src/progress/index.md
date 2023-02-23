@@ -2,7 +2,6 @@
 description: kool ui progress 进度条
 group:
   title: 反馈
-  order: 2
 keywords: ['kool ui', 'progress', '进度条']
 toc: content
 ---

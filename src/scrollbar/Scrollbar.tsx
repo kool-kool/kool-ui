@@ -56,6 +56,7 @@ const Scrollbar: React.ForwardRefRenderFunction<
 
   const wrapRef = React.useRef<HTMLDivElement | null>(null)
 
+  // 滚动内容容器
   const ScrollbarView = (
     props: React.PropsWithChildren<React.HTMLAttributes<HTMLElement>>
   ) => React.createElement(component, props, children)
@@ -64,6 +65,9 @@ const Scrollbar: React.ForwardRefRenderFunction<
     updateSize()
   }, [wrapRef.current?.scrollHeight, wrapRef.current?.scrollWidth])
 
+  /**
+   * @description 用于初始化forwardRef与useRef
+   */
   const bindRef = (el: HTMLDivElement | null) => {
     wrapRef.current = el
     if (!ref) {
@@ -76,6 +80,7 @@ const Scrollbar: React.ForwardRefRenderFunction<
     }
   }
 
+  // 更新滚动条大小
   function updateSize() {
     if (!wrapRef.current) {
       return

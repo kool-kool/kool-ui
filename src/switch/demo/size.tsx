@@ -1,15 +1,10 @@
 import { Switch } from '@kool-kool/kool-ui'
 import React from 'react'
-
-const flexContainer: React.CSSProperties = {
-  display: 'flex',
-  justifyContent: 'start',
-  alignItems: 'center'
-}
+import './index.css'
 
 const App: React.FC = () => {
   return (
-    <div style={flexContainer}>
+    <div className={'switchSize'}>
       <span style={{ marginRight: '20px' }}>
         <Switch size={'small'} />
       </span>

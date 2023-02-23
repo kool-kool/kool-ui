@@ -1,16 +1,10 @@
 import { Button, message } from '@kool-kool/kool-ui'
 import React from 'react'
+import './index.css'
 
 const App: React.FC = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: '5px'
-      }}
-    >
+    <div className={'btns'}>
       <Button
         onClick={() =>
           message.success({ type: 'success', content: '新增成功' })

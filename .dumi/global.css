@@ -1,0 +1,35 @@
+body::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 15px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #a8a8a8;
+}
+
+body::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.dumi-default-sidebar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dumi-default-sidebar::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 15px;
+}
+
+.dumi-default-sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: #a8a8a8;
+}
+
+.dumi-default-sidebar::-webkit-scrollbar-corner {
+  background-color: transparent;
+}

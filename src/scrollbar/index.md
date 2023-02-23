@@ -1,8 +1,6 @@
 ---
 description: kool ui Scrollbar 滚动条
-group:
-  title: 其他
-  order: 1
+group: 通用
 keywords: ['kool ui', 'Scrollbar', '滚动条']
 toc: content
 ---

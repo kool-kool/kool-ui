@@ -1,8 +1,6 @@
 ---
 description: kool ui Switch 开关
-group:
-  title: 数据录入
-  order: 3
+group: 数据录入
 keywords: ['kool ui', 'Switch', '开关']
 toc: content
 ---

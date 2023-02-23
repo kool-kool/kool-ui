@@ -1,8 +1,6 @@
 ---
 description: kool ui Slider 滑动输入条
-group:
-  title: 数据录入
-  order: 2
+group: 数据录入
 keywords: ['kool ui', 'Slider', '滑动输入条']
 toc: content
 ---

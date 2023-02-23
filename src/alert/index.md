@@ -4,7 +4,7 @@ keywords: [Kool_UI, 'alert', 'tips']
 toc: content
 group:
   title: 反馈
-  order: 1
+  order: 6
 title: Alert 警告提示
 ---
 

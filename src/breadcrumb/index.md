@@ -1,8 +1,6 @@
 ---
 description: kool ui Breadcrumb 面包屑
-group:
-  title: 导航
-  order: 1
+group: 导航
 keywords: ['kool ui', 'Breadcrumb', '面包屑']
 toc: content
 ---
