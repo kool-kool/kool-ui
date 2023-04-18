@@ -18,11 +18,13 @@ export default [
         // 输出文件
         file: 'dist/index.es.js',
         // 输出格式
-        format: 'esm'
+        format: 'esm',
+        sourcemap: true
       },
       {
         file: 'dist/index.cjs.js',
-        format: 'cjs'
+        format: 'cjs',
+        sourcemap: true
       }
     ],
     plugins: [
